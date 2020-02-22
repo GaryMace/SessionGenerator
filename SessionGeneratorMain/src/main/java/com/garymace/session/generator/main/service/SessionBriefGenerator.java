@@ -17,6 +17,6 @@ public class SessionBriefGenerator {
     }
 
     public Set<SwimSessionBrief> generateFrom(Profile profile) {
-
+        
     }
 }

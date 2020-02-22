@@ -5,5 +5,5 @@ import org.immutables.value.Value;
 
 @Value.Immutable
 @HubSpotStyle
-public interface SessionItemIF {
+public interface SessionStageDetailsIF {
 }
