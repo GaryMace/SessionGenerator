@@ -13,15 +13,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Optional;
 
-public class SessionRulesBase {
+public class SessionRulesServiceBase {
     private final ObjectMapper objectMapper;
 
     @Inject
-    public SessionRulesBase(ObjectMapper objectMapper) {
+    public SessionRulesServiceBase(ObjectMapper objectMapper) {
         this.objectMapper = objectMapper;
     }
 
-    public SessionRules supplySessionRules(Profile profile, SessionStageType sessionStageType, String filePath) {
+    public Optional<SessionRules> supplySessionRules(Profile profile, SessionStageType sessionStageType, String filePath) {
         RulesConfig rulesConfig = loadJsonAs(filePath, RulesConfig.class);
 
         Optional<AthleticLevelRules> maybeAthleticLevelRules = rulesConfig.getAthleticLevelRules().stream()
@@ -32,10 +32,10 @@ public class SessionRulesBase {
             throw new RuntimeException(String.format("unable to find rules for athleticLevel: %s", profile.getAthleticLevel()));
         }
 
-        return SessionRules.builder()
+        return Optional.of(SessionRules.builder()
                 .setSessionStageType(sessionStageType)
                 .setPermittedDistanceDetails(maybeAthleticLevelRules.get().getDistanceDetails())
-                .build();
+                .build());
     }
 
     private <T> T loadJsonAs(String filename, Class<T> type) {
@@ -44,7 +44,7 @@ public class SessionRulesBase {
 
     private JsonNode loadJson(String filename) {
         String resourceName = "/utils/rules/" + filename;
-        try (InputStream fileInputStream = SessionRulesBase.class.getResourceAsStream(resourceName)) {
+        try (InputStream fileInputStream = SessionRulesServiceBase.class.getResourceAsStream(resourceName)) {
             if (fileInputStream == null) {
                 throw new RuntimeException("Unable to find resource: " + resourceName);
             }

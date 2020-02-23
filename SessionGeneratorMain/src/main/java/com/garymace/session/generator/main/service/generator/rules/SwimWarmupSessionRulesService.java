@@ -7,19 +7,17 @@ import com.garymace.session.generator.base.models.session.SessionStageType;
 import com.garymace.session.generator.base.models.session.rules.SessionRules;
 
 import com.google.inject.Inject;
-import com.google.inject.Singleton;
 
 
-@Singleton
-public class SwimMainsetSessionRules extends SessionRulesBase {
-    public static final String SWIM_MAINSET_RULES_PATH = "swim_mainset_rules.json";
+public class SwimWarmupSessionRulesService extends SessionRulesServiceBase {
+    public static final String SWIM_WARMUP_RULES_PATH = "swim_warmup_rules.json";
 
     @Inject
-    public SwimMainsetSessionRules(ObjectMapper objectMapper) {
+    public SwimWarmupSessionRulesService(ObjectMapper objectMapper) {
         super(objectMapper);
     }
 
     public SessionRules supplySessionRules(Profile profile) {
-        return supplySessionRules(profile, SessionStageType.MAINSET, SWIM_MAINSET_RULES_PATH);
+        return supplySessionRules(profile, SessionStageType.WARMUP, SWIM_WARMUP_RULES_PATH);
     }
 }
