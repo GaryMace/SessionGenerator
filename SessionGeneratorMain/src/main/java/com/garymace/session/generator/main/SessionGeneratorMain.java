@@ -2,7 +2,8 @@ package com.garymace.session.generator.main;
 
 import com.garymace.session.generator.base.models.profile.Profile;
 import com.garymace.session.generator.base.models.session.brief.sport.SwimSessionBrief;
-import com.garymace.session.generator.main.service.SessionBriefGenerator;
+import com.garymace.session.generator.base.models.session.brief.sport.SwimTrainingSession;
+import com.garymace.session.generator.main.service.TrainingSessionGenerator;
 import com.google.inject.Inject;
 import utils.ProfileLoadingUtils;
 
@@ -14,13 +15,13 @@ public class SessionGeneratorMain {
             "{\"athletic_level\":\"...\", \"weekly_session_preference\":\"...\", \"sport_type\":\"...\"}";
 
     private final ProfileLoadingUtils profileLoadingUtils;
-    private final SessionBriefGenerator sessionBriefGenerator;
+    private final TrainingSessionGenerator trainingSessionGenerator;
 
     @Inject
     public SessionGeneratorMain(ProfileLoadingUtils profileLoadingUtils,
-                SessionBriefGenerator sessionBriefGenerator) {
+                                TrainingSessionGenerator trainingSessionGenerator) {
             this.profileLoadingUtils = profileLoadingUtils;
-            this.sessionBriefGenerator = sessionBriefGenerator;
+            this.trainingSessionGenerator = trainingSessionGenerator;
         }
 
         public void main(String[] args) {
@@ -32,6 +33,6 @@ public class SessionGeneratorMain {
             throw new RuntimeException("An error occurred while attempting to load profile");
         }
 
-        Set<SwimSessionBrief> sessionBriefs = sessionBriefGenerator.generateFrom(maybeProfile.get());
+        Set<SwimTrainingSession> trainingSessions = trainingSessionGenerator.generateFrom(maybeProfile.get());
     }
 }
