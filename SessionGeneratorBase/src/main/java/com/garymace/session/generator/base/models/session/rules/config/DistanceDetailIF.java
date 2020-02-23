@@ -10,6 +10,6 @@ import java.util.Set;
 @HubSpotStyle
 public interface DistanceDetailIF {
     int getDistance();
-    Set<SessionStageType> getSetTypes();
+    Set<SessionStageType> getPermittedSetTypes();
     RepDetail getRepDetail();
 }
