@@ -11,5 +11,7 @@ import java.util.Set;
 @HubSpotStyle
 public interface SessionRulesIF {
     SessionStageType getSessionStageType();
+    int getMaxReps();
+    int getMaxDistance();
     Set<DistanceDetail> getPermittedDistanceDetails();
 }

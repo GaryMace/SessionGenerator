@@ -11,5 +11,7 @@ import java.util.Set;
 @HubSpotStyle
 public interface AthleticLevelRulesIF {
     AthleticLevel getAthleticLevel();
+    int getMaxSets();
+    int getMaxDistance();
     Set<DistanceDetail> getDistanceDetails();
 }
