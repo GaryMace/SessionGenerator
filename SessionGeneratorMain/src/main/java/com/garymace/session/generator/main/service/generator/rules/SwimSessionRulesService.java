@@ -8,12 +8,16 @@ import com.garymace.session.generator.base.models.session.rules.SessionRules;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Optional;
 
 
 @Singleton
 public class SwimSessionRulesService extends SessionRulesServiceBase {
+    private static final Logger LOG = LoggerFactory.getLogger(SwimSessionRulesService.class);
+
     public static final String SWIM_COOLDOWN_RULES_PATH = "swim_cooldown_rules.json";
     public static final String SWIM_MAINSET_RULES_PATH = "swim_mainset_rules.json";
     public static final String SWIM_WARMUP_RULES_PATH = "swim_warmup_rules.json";
@@ -32,6 +36,8 @@ public class SwimSessionRulesService extends SessionRulesServiceBase {
             case COOLDOWN:
                 return supplySessionRules(profile, sessionStageType, SWIM_COOLDOWN_RULES_PATH);
             default:
+                LOG.warn("Unknown sessionStageType: {}; could not get session rules for: {}",
+                        sessionStageType, profile);
                 return Optional.empty();
         }
     }

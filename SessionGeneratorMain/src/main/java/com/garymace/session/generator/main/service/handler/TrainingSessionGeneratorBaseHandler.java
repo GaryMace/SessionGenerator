@@ -4,6 +4,6 @@ import com.garymace.session.generator.base.models.profile.Profile;
 
 import java.util.Set;
 
-public interface SessionBriefGeneratorBaseHandler<T> {
+public interface TrainingSessionGeneratorBaseHandler<T> {
     Set<T> handle(Profile profile);
 }

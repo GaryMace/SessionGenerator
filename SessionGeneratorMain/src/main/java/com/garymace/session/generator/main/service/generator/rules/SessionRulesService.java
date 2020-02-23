@@ -25,5 +25,6 @@ public class SessionRulesService {
             }
             return maybeSessionRules.get();
         }
+        throw new RuntimeException(); //TODO: do something else here
     }
 }
