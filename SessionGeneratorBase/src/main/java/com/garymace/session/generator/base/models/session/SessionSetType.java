@@ -8,6 +8,7 @@ public enum SessionSetType {
     HAND_PADS,
     INCREMENTAL_THRESHOLD,
     PYRAMID,
+    RECOVERY,
     THRESHOLD,
     TRIANGLE_SET,
     ULTRA_PYRAMID,
