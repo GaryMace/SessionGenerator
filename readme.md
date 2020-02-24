@@ -9,9 +9,29 @@
 - [ ] create a UI for the profile input and remove CLI support
 - [ ] 
 
+## Current Running Mech for IntelliJ
+- Add Program args:
+```
+"C:\absolute\path\to\testfile\test.json"
+```
+where `test.json` looks like:
+```json
+{
+  "athletic_level": "beginner", // beginner, intermediate, advanced
+  "weekly_session_preference": 2,
+  "sport_type": "swim" // swim, run
+}
+```
+- VM Options:
+```
+-Dlog4j.configuration="log4j.properties"
+```
+
+
 The idea behind this is to eliminate the pain in the ass that is thinking of Swimming and Running sessions for yourself.
 
 Normally these sessions are either hand made by those who know what they are doing or by professional sports scientists. Whilst the sessions that this project generates won't tailor to professional athletes it will issue reasonable training guides that can be loosely followed by sports enthusiast at different sporting abilities.
+
 
 To Use supply a json file like:
 ```json
