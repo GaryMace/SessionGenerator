@@ -2,11 +2,13 @@ package com.garymace.session.generator.main.service.generator.rules;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
 import com.garymace.session.generator.base.models.profile.Profile;
 import com.garymace.session.generator.base.models.session.SessionStageType;
 import com.garymace.session.generator.base.models.session.rules.SessionRules;
-import com.garymace.session.generator.base.models.session.rules.config.AthleticLevelRules;
-import com.garymace.session.generator.base.models.session.rules.config.RulesConfig;
+import com.garymace.session.generator.base.models.session.rules.config.Rule;
+import com.garymace.session.generator.base.models.session.rules.config.Rules;
+
 import com.google.inject.Inject;
 
 import java.io.IOException;
@@ -22,19 +24,21 @@ public class SessionRulesServiceBase {
     }
 
     public Optional<SessionRules> supplySessionRules(Profile profile, SessionStageType sessionStageType, String filePath) {
-        RulesConfig rulesConfig = loadJsonAs(filePath, RulesConfig.class);
+        Rules rules = loadJsonAs(filePath, Rules.class);
 
-        Optional<AthleticLevelRules> maybeAthleticLevelRules = rulesConfig.getAthleticLevelRules().stream()
+        Optional<Rule> maybeRule = rules.getRules().stream()
                 .filter(athleticLevelRule -> athleticLevelRule.getAthleticLevel() == profile.getAthleticLevel())
                 .findFirst();
 
-        if (!maybeAthleticLevelRules.isPresent()) {
+        if (!maybeRule.isPresent()) {
             throw new RuntimeException(String.format("unable to find rules for athleticLevel: %s", profile.getAthleticLevel()));
         }
 
         return Optional.of(SessionRules.builder()
+                .setMaxReps(maybeRule.get().getMaxReps())
+                .setMaxDistance(maybeRule.get().getMaxDistance())
                 .setSessionStageType(sessionStageType)
-                .setPermittedDistanceDetails(maybeAthleticLevelRules.get().getDistanceDetails())
+                .setPermittedDistanceDetails(maybeRule.get().getPermittedDistanceDetails())
                 .build());
     }
 

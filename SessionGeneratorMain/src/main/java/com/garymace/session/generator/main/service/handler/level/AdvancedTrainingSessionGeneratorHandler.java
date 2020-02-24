@@ -57,6 +57,7 @@ public class AdvancedTrainingSessionGeneratorHandler implements TrainingSessionG
 
         Set<SessionSet> sessionSets = new HashSet<>();
         while (currentDistance < maxDistance) {
+            LOG.info("Set's are currently: {}", sessionSets);
             SessionBuilderAction sessionBuilderAction = SessionBuilderUtils.decide(SessionBuilderParams.builder()
                     .setCurrentDistance(currentDistance)
                     .setCurrentReps(currentSets)
