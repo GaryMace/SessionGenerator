@@ -83,7 +83,10 @@ public class AdvancedTrainingSessionGeneratorHandler implements TrainingSessionG
                     currentDistance *= 2;
                     break;
                 case STOP:
-                    break;
+                    return SessionStageDetails.builder()
+                            .setSetCount(currentSets)
+                            .setSessionSets(sessionSets)
+                            .build();
             }
         }
         return SessionStageDetails.builder()

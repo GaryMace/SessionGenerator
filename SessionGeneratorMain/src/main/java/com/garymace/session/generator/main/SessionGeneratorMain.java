@@ -1,5 +1,7 @@
 package com.garymace.session.generator.main;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.garymace.session.generator.base.models.profile.Profile;
 import com.garymace.session.generator.base.models.session.brief.sport.SwimTrainingSession;
 import com.garymace.session.generator.main.config.SessionGeneratorModule;
@@ -24,11 +26,12 @@ public class SessionGeneratorMain {
     public SessionGeneratorMain() {
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JsonProcessingException {
         Injector injector = Guice.createInjector(new SessionGeneratorModule());
 
         ProfileLoadingUtils profileLoadingUtils = injector.getInstance(ProfileLoadingUtils.class);
         TrainingSessionGenerator trainingSessionGenerator = injector.getInstance(TrainingSessionGenerator.class);
+        ObjectMapper objectMapper = injector.getInstance(ObjectMapper.class);
 
         LOG.info("Starting programme");
         if (args.length != 1) {
@@ -40,6 +43,6 @@ public class SessionGeneratorMain {
         }
 
         Set<SwimTrainingSession> trainingSessions = trainingSessionGenerator.generateFrom(maybeProfile.get());
-        LOG.info("Session is: {}", trainingSessions);
+        LOG.info("Session is: {}", objectMapper.writeValueAsString(trainingSessions));
     }
 }

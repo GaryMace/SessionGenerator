@@ -20,7 +20,7 @@ public class SessionBuilderUtils {
     private static final Predicate<SessionBuilderParams> MAX_REPS_REACHED = (sessionBuilderParams) ->
             sessionBuilderParams.getCurrentReps() >= sessionBuilderParams.getMaxReps();
     private static final Predicate<SessionBuilderParams> SHOULD_PERFORM_NEW_ACTION = (sessionBuilderParams) ->
-            sessionBuilderParams.getCurrentDistance() > 0 && (int)(Math.random() * 100) <= 60;
+            sessionBuilderParams.getCurrentDistance() >= 0 && (int)(Math.random() * 100) <= 60;
 
     public SessionBuilderUtils() {
 
