@@ -1,0 +1,125 @@
+INFO main com.garymace.session.generator.main.SessionGeneratorMain - Starting programme
+ERROR main utils.ProfileLoadingUtils - Error occurred while loading profile: 
+java.nio.file.NoSuchFileException: ..\test.json
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:370)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:421)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3205)
+	at utils.ProfileLoadingUtils.loadProfile(ProfileLoadingUtils.java:25)
+	at com.garymace.session.generator.main.SessionGeneratorMain.main(SessionGeneratorMain.java:38)
+INFO main com.garymace.session.generator.main.SessionGeneratorMain - Starting programme
+ERROR main utils.ProfileLoadingUtils - Error occurred while loading profile: 
+java.nio.file.NoSuchFileException: ..\test.json
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:370)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:421)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3205)
+	at utils.ProfileLoadingUtils.loadProfile(ProfileLoadingUtils.java:25)
+	at com.garymace.session.generator.main.SessionGeneratorMain.main(SessionGeneratorMain.java:37)
+INFO main com.garymace.session.generator.main.SessionGeneratorMain - Starting programme
+ERROR main utils.ProfileLoadingUtils - Error occurred while loading profile: 
+java.nio.file.NoSuchFileException: ..\test.json
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:370)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:421)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3205)
+	at utils.ProfileLoadingUtils.loadProfile(ProfileLoadingUtils.java:25)
+	at com.garymace.session.generator.main.SessionGeneratorMain.main(SessionGeneratorMain.java:37)
+INFO main com.garymace.session.generator.main.SessionGeneratorMain - Starting programme
+ERROR main utils.ProfileLoadingUtils - Error occurred while loading profile: 
+java.nio.file.NoSuchFileException: test.json
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:85)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:108)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.newByteChannel(WindowsFileSystemProvider.java:235)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:370)
+	at java.base/java.nio.file.Files.newByteChannel(Files.java:421)
+	at java.base/java.nio.file.Files.readAllBytes(Files.java:3205)
+	at utils.ProfileLoadingUtils.loadProfile(ProfileLoadingUtils.java:25)
+	at com.garymace.session.generator.main.SessionGeneratorMain.main(SessionGeneratorMain.java:37)
+INFO main com.garymace.session.generator.main.SessionGeneratorMain - Starting programme
+ERROR main utils.ProfileLoadingUtils - Error occurred while loading profile: 
+com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException: Unrecognized field "athletic_level" (class com.garymace.session.generator.base.models.profile.Profile$Json), not marked as ignorable (3 known properties: "weeklySessionPreference", "athleticLevel", "sportType"])
+ at [Source: {
+  "athletic_level": "advanced",
+  "weekly_session_preference": 2,
+  "sport_type": "swim"
+}; line: 2, column: 22] (through reference chain: com.garymace.session.generator.base.models.profile.Json["athletic_level"])
+	at com.fasterxml.jackson.databind.exc.UnrecognizedPropertyException.from(UnrecognizedPropertyException.java:62)
+	at com.fasterxml.jackson.databind.DeserializationContext.reportUnknownProperty(DeserializationContext.java:851)
+	at com.fasterxml.jackson.databind.deser.std.StdDeserializer.handleUnknownProperty(StdDeserializer.java:1085)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownProperty(BeanDeserializerBase.java:1392)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.handleUnknownVanilla(BeanDeserializerBase.java:1370)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:266)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeOther(BeanDeserializer.java:163)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:135)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1123)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:298)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:3807)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2797)
+	at utils.ProfileLoadingUtils.loadProfile(ProfileLoadingUtils.java:26)
+	at com.garymace.session.generator.main.SessionGeneratorMain.main(SessionGeneratorMain.java:37)
+INFO main com.garymace.session.generator.main.SessionGeneratorMain - Starting programme
+ERROR main utils.ProfileLoadingUtils - Error occurred while loading profile: 
+com.fasterxml.jackson.databind.exc.InvalidFormatException: Can not construct instance of com.garymace.session.generator.base.models.AthleticLevel from String value ("advanced"): value not one of declared Enum instance names: [INTERMEDIATE, BEGINNER, ADVANCED]
+ at [Source: {
+  "athletic_level": "advanced",
+  "weekly_session_preference": 2,
+  "sport_type": "swim"
+}; line: 2, column: 21] (through reference chain: com.garymace.session.generator.base.models.profile.Json["athletic_level"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:74)
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1022)
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._deserializeAltString(EnumDeserializer.java:151)
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer.deserialize(EnumDeserializer.java:96)
+	at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:495)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:95)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:260)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeOther(BeanDeserializer.java:163)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:135)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1123)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:298)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:3807)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2797)
+	at utils.ProfileLoadingUtils.loadProfile(ProfileLoadingUtils.java:26)
+	at com.garymace.session.generator.main.SessionGeneratorMain.main(SessionGeneratorMain.java:37)
+INFO main com.garymace.session.generator.main.SessionGeneratorMain - Starting programme
+ERROR main utils.ProfileLoadingUtils - Error occurred while loading profile: 
+com.fasterxml.jackson.databind.exc.InvalidFormatException: Can not construct instance of com.garymace.session.generator.base.models.AthleticLevel from String value ("advanced"): value not one of declared Enum instance names: [INTERMEDIATE, BEGINNER, ADVANCED]
+ at [Source: {
+  "athletic_level": "advanced",
+  "weekly_session_preference": 2,
+  "sport_type": "swim"
+}; line: 2, column: 21] (through reference chain: com.garymace.session.generator.base.models.profile.Json["athletic_level"])
+	at com.fasterxml.jackson.databind.exc.InvalidFormatException.from(InvalidFormatException.java:74)
+	at com.fasterxml.jackson.databind.DeserializationContext.weirdStringException(DeserializationContext.java:1022)
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer._deserializeAltString(EnumDeserializer.java:151)
+	at com.fasterxml.jackson.databind.deser.std.EnumDeserializer.deserialize(EnumDeserializer.java:96)
+	at com.fasterxml.jackson.databind.deser.SettableBeanProperty.deserialize(SettableBeanProperty.java:495)
+	at com.fasterxml.jackson.databind.deser.impl.MethodProperty.deserializeAndSet(MethodProperty.java:95)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.vanillaDeserialize(BeanDeserializer.java:260)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer._deserializeOther(BeanDeserializer.java:163)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:135)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.deserializeFromObjectUsingNonDefault(BeanDeserializerBase.java:1123)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserializeFromObject(BeanDeserializer.java:298)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializer.deserialize(BeanDeserializer.java:133)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:3807)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:2797)
+	at utils.ProfileLoadingUtils.loadProfile(ProfileLoadingUtils.java:26)
+	at com.garymace.session.generator.main.SessionGeneratorMain.main(SessionGeneratorMain.java:37)
+INFO main com.garymace.session.generator.main.SessionGeneratorMain - Starting programme
+INFO main com.garymace.session.generator.main.SessionGeneratorMain - Starting programme
+INFO main com.garymace.session.generator.main.SessionGeneratorMain - Starting programme
+INFO main com.garymace.session.generator.main.SessionGeneratorMain - Starting programme
+INFO main com.garymace.session.generator.main.SessionGeneratorMain - Starting programme
+INFO main com.garymace.session.generator.main.SessionGeneratorMain - Starting programme

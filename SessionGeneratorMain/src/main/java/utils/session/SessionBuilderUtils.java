@@ -1,8 +1,17 @@
 package utils.session;
 
+import com.garymace.session.generator.base.models.session.SessionSet;
+import com.garymace.session.generator.base.models.session.SessionSetType;
+import com.garymace.session.generator.base.models.session.SessionStageType;
+import com.garymace.session.generator.base.models.session.SetItem;
 import com.garymace.session.generator.base.models.session.builder.SessionBuilderAction;
 import com.garymace.session.generator.base.models.session.builder.SessionBuilderParams;
+import com.garymace.session.generator.base.models.session.rules.SessionRules;
+import com.garymace.session.generator.base.models.session.rules.config.DistanceDetail;
+import com.google.common.collect.ImmutableList;
+import utils.CollectionUtils;
 
+import java.util.Random;
 import java.util.function.Predicate;
 
 public class SessionBuilderUtils {
@@ -33,5 +42,24 @@ public class SessionBuilderUtils {
             default:
                 return action;
         }
+    }
+
+    public static SessionSet generateSessionSet(SessionRules sessionRules) {
+        DistanceDetail distanceDetail = CollectionUtils.getRandomItem(sessionRules.getPermittedDistanceDetails());
+        SessionSetType sessionSetType = CollectionUtils.getRandomItem(distanceDetail.getPermittedSetTypes());
+        int max = distanceDetail.getRepDetail().getMax();
+        int min = distanceDetail.getRepDetail().getMin();
+
+        Random random = new Random();
+        // For now just use static rest periods
+        return SessionSet.builder()
+                .setSetReps(random.nextInt((max - min) + 1) + min)
+                .setPostSessionRestSeconds(20)
+                .setSessionSetType(sessionSetType)
+                .setSetItems(ImmutableList.of(SetItem.builder()
+                        .setDistance(distanceDetail.getDistance())
+                        .setRestSeconds(20)
+                        .build()))
+                .build();
     }
 }

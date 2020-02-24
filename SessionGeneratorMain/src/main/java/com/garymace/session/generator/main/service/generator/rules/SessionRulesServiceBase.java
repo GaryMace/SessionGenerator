@@ -43,7 +43,7 @@ public class SessionRulesServiceBase {
     }
 
     private JsonNode loadJson(String filename) {
-        String resourceName = "/utils/rules/" + filename;
+        String resourceName = "/rules/" + filename;
         try (InputStream fileInputStream = SessionRulesServiceBase.class.getResourceAsStream(resourceName)) {
             if (fileInputStream == null) {
                 throw new RuntimeException("Unable to find resource: " + resourceName);

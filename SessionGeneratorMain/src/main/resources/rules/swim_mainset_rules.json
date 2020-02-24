@@ -3,7 +3,7 @@
     "athletic_level": "beginner",
     "max_reps": 1,
     "max_distance": 500,
-    "distance_details": [
+    "permitted_distance_details": [
       {
         "distance": 50,
         "permitted_set_types": [
@@ -13,11 +13,9 @@
           "FIN_HAND_PADS",
           "HAND_PADS",
           "INCREMENTAL_THRESHOLD",
-          "PYRAMID",
           "RECOVERY",
           "THRESHOLD",
-          "TRIANGLE_SET",
-          "ULTRA_PYRAMID"
+          "TRIANGLE_SET"
         ],
         "rep_details": {
           "min": 1,
@@ -33,11 +31,9 @@
           "FIN_HAND_PADS",
           "HAND_PADS",
           "INCREMENTAL_THRESHOLD",
-          "PYRAMID",
           "RECOVERY",
           "THRESHOLD",
-          "TRIANGLE_SET",
-          "ULTRA_PYRAMID"
+          "TRIANGLE_SET"
         ],
         "rep_details": {
           "min": 1,
@@ -50,7 +46,7 @@
     "athletic_level": "intermediate",
     "max_reps": 2,
     "max_distance": 1000,
-    "distance_details": [
+    "permitted_distance_details": [
       {
         "distance": 50,
         "permitted_set_types": [
@@ -60,11 +56,9 @@
           "FIN_HAND_PADS",
           "HAND_PADS",
           "INCREMENTAL_THRESHOLD",
-          "PYRAMID",
           "RECOVERY",
           "THRESHOLD",
-          "TRIANGLE_SET",
-          "ULTRA_PYRAMID"
+          "TRIANGLE_SET"
         ],
         "rep_details": {
           "min": 2,
@@ -80,11 +74,9 @@
           "FIN_HAND_PADS",
           "HAND_PADS",
           "INCREMENTAL_THRESHOLD",
-          "PYRAMID",
           "RECOVERY",
           "THRESHOLD",
-          "TRIANGLE_SET",
-          "ULTRA_PYRAMID"
+          "TRIANGLE_SET"
         ],
         "rep_details": {
           "min": 4,
@@ -100,11 +92,9 @@
           "FIN_HAND_PADS",
           "HAND_PADS",
           "INCREMENTAL_THRESHOLD",
-          "PYRAMID",
           "RECOVERY",
           "THRESHOLD",
-          "TRIANGLE_SET",
-          "ULTRA_PYRAMID"
+          "TRIANGLE_SET"
         ],
         "rep_details": {
           "min": 1,
@@ -120,11 +110,9 @@
           "FIN_HAND_PADS",
           "HAND_PADS",
           "INCREMENTAL_THRESHOLD",
-          "PYRAMID",
           "RECOVERY",
           "THRESHOLD",
-          "TRIANGLE_SET",
-          "ULTRA_PYRAMID"
+          "TRIANGLE_SET"
         ],
         "rep_details": {
           "min": 1,
@@ -137,7 +125,7 @@
     "athletic_level": "advanced",
     "max_reps": 4,
     "max_distance": 2500,
-    "distance_details": [
+    "permitted_distance_details": [
       {
         "distance": 50,
         "permitted_set_types": [
@@ -147,11 +135,9 @@
           "FIN_HAND_PADS",
           "HAND_PADS",
           "INCREMENTAL_THRESHOLD",
-          "PYRAMID",
           "RECOVERY",
           "THRESHOLD",
-          "TRIANGLE_SET",
-          "ULTRA_PYRAMID"
+          "TRIANGLE_SET"
         ],
         "rep_details": {
           "min": 4,
@@ -167,11 +153,9 @@
           "FIN_HAND_PADS",
           "HAND_PADS",
           "INCREMENTAL_THRESHOLD",
-          "PYRAMID",
           "RECOVERY",
           "THRESHOLD",
-          "TRIANGLE_SET",
-          "ULTRA_PYRAMID"
+          "TRIANGLE_SET"
         ],
         "rep_details": {
           "min": 4,
@@ -187,10 +171,8 @@
           "FIN_HAND_PADS",
           "HAND_PADS",
           "INCREMENTAL_THRESHOLD",
-          "PYRAMID",
           "THRESHOLD",
-          "TRIANGLE_SET",
-          "ULTRA_PYRAMID"
+          "TRIANGLE_SET"
         ],
         "rep_details": {
           "min": 2,
@@ -206,10 +188,8 @@
           "FIN_HAND_PADS",
           "HAND_PADS",
           "INCREMENTAL_THRESHOLD",
-          "PYRAMID",
           "THRESHOLD",
-          "TRIANGLE_SET",
-          "ULTRA_PYRAMID"
+          "TRIANGLE_SET"
         ],
         "rep_details": {
           "min": 2,
@@ -225,9 +205,7 @@
           "FIN_HAND_PADS",
           "HAND_PADS",
           "INCREMENTAL_THRESHOLD",
-          "PYRAMID",
-          "THRESHOLD",
-          "ULTRA_PYRAMID"
+          "THRESHOLD"
         ],
         "rep_details": {
           "min": 1,
@@ -243,9 +221,7 @@
           "FIN_HAND_PADS",
           "HAND_PADS",
           "INCREMENTAL_THRESHOLD",
-          "PYRAMID",
-          "THRESHOLD",
-          "ULTRA_PYRAMID"
+          "THRESHOLD"
         ],
         "rep_details": {
           "min": 1,
@@ -259,9 +235,7 @@
           "FINS",
           "FIN_HAND_PADS",
           "HAND_PADS",
-          "PYRAMID",
-          "THRESHOLD",
-          "ULTRA_PYRAMID"
+          "THRESHOLD"
         ],
         "rep_details": {
           "min": 1,
