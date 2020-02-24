@@ -1,0 +1,260 @@
+{
+  "rules": [
+    {
+      "athletic_level": "beginner",
+      "max_reps": 1,
+      "max_distance": 500,
+      "permitted_distance_details": [
+        {
+          "distance": 50,
+          "permitted_set_types": [
+            "AEROBIC",
+            "ANAEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS",
+            "INCREMENTAL_THRESHOLD",
+            "RECOVERY",
+            "THRESHOLD",
+            "TRIANGLE_SET"
+          ],
+          "rep_detail": {
+            "min": 1,
+            "max": 4
+          }
+        },
+        {
+          "distance": 100,
+          "permitted_set_types": [
+            "AEROBIC",
+            "ANAEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS",
+            "INCREMENTAL_THRESHOLD",
+            "RECOVERY",
+            "THRESHOLD",
+            "TRIANGLE_SET"
+          ],
+          "rep_detail": {
+            "min": 1,
+            "max": 2
+          }
+        }
+      ]
+    },
+    {
+      "athletic_level": "intermediate",
+      "max_reps": 2,
+      "max_distance": 1000,
+      "permitted_distance_details": [
+        {
+          "distance": 50,
+          "permitted_set_types": [
+            "AEROBIC",
+            "ANAEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS",
+            "INCREMENTAL_THRESHOLD",
+            "RECOVERY",
+            "THRESHOLD",
+            "TRIANGLE_SET"
+          ],
+          "rep_detail": {
+            "min": 2,
+            "max": 10
+          }
+        },
+        {
+          "distance": 100,
+          "permitted_set_types": [
+            "AEROBIC",
+            "ANAEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS",
+            "INCREMENTAL_THRESHOLD",
+            "RECOVERY",
+            "THRESHOLD",
+            "TRIANGLE_SET"
+          ],
+          "rep_detail": {
+            "min": 4,
+            "max": 8
+          }
+        },
+        {
+          "distance": 150,
+          "permitted_set_types": [
+            "AEROBIC",
+            "ANAEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS",
+            "INCREMENTAL_THRESHOLD",
+            "RECOVERY",
+            "THRESHOLD",
+            "TRIANGLE_SET"
+          ],
+          "rep_detail": {
+            "min": 1,
+            "max": 4
+          }
+        },
+        {
+          "distance": 200,
+          "permitted_set_types": [
+            "AEROBIC",
+            "ANAEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS",
+            "INCREMENTAL_THRESHOLD",
+            "RECOVERY",
+            "THRESHOLD",
+            "TRIANGLE_SET"
+          ],
+          "rep_detail": {
+            "min": 1,
+            "max": 4
+          }
+        }
+      ]
+    },
+    {
+      "athletic_level": "advanced",
+      "max_reps": 4,
+      "max_distance": 2500,
+      "permitted_distance_details": [
+        {
+          "distance": 50,
+          "permitted_set_types": [
+            "AEROBIC",
+            "ANAEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS",
+            "INCREMENTAL_THRESHOLD",
+            "RECOVERY",
+            "THRESHOLD",
+            "TRIANGLE_SET"
+          ],
+          "rep_detail": {
+            "min": 4,
+            "max": 20
+          }
+        },
+        {
+          "distance": 100,
+          "permitted_set_types": [
+            "AEROBIC",
+            "ANAEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS",
+            "INCREMENTAL_THRESHOLD",
+            "RECOVERY",
+            "THRESHOLD",
+            "TRIANGLE_SET"
+          ],
+          "rep_detail": {
+            "min": 4,
+            "max": 10
+          }
+        },
+        {
+          "distance": 150,
+          "permitted_set_types": [
+            "AEROBIC",
+            "ANAEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS",
+            "INCREMENTAL_THRESHOLD",
+            "THRESHOLD",
+            "TRIANGLE_SET"
+          ],
+          "rep_detail": {
+            "min": 2,
+            "max": 8
+          }
+        },
+        {
+          "distance": 200,
+          "permitted_set_types": [
+            "AEROBIC",
+            "ANAEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS",
+            "INCREMENTAL_THRESHOLD",
+            "THRESHOLD",
+            "TRIANGLE_SET"
+          ],
+          "rep_detail": {
+            "min": 2,
+            "max": 8
+          }
+        },
+        {
+          "distance": 300,
+          "permitted_set_types": [
+            "AEROBIC",
+            "ANAEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS",
+            "INCREMENTAL_THRESHOLD",
+            "THRESHOLD"
+          ],
+          "rep_detail": {
+            "min": 1,
+            "max": 4
+          }
+        },
+        {
+          "distance": 400,
+          "permitted_set_types": [
+            "AEROBIC",
+            "ANAEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS",
+            "INCREMENTAL_THRESHOLD",
+            "THRESHOLD"
+          ],
+          "rep_detail": {
+            "min": 1,
+            "max": 4
+          }
+        },
+        {
+          "distance": 500,
+          "permitted_set_types": [
+            "AEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS",
+            "THRESHOLD"
+          ],
+          "rep_detail": {
+            "min": 1,
+            "max": 2
+          }
+        },
+        {
+          "distance": 1000,
+          "permitted_set_types": [
+            "AEROBIC",
+            "THRESHOLD"
+          ],
+          "rep_detail": {
+            "min": 1,
+            "max": 1
+          }
+        }
+      ]
+    }
+  ]
+}

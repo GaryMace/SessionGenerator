@@ -3,6 +3,8 @@
 *.war
 *.ear
 *.iml
+*.log
+*.log.*
 .idea/
 
 target/
