@@ -1,0 +1,187 @@
+{
+  "rules": [
+    {
+      "athletic_level": "beginner",
+      "max_reps": 1,
+      "min_distance": 50,
+      "max_distance": 100,
+      "permitted_distance_details": [
+        {
+          "distance": 50,
+          "permitted_set_types": [
+            "AEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS",
+            "INCREMENTAL_THRESHOLD"
+          ],
+          "rep_detail": {
+            "min": 1,
+            "max": 2
+          }
+        },
+        {
+          "distance": 100,
+          "permitted_set_types": [
+            "AEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS"
+          ],
+          "rep_detail": {
+            "min": 1,
+            "max": 1
+          }
+        }
+      ]
+    },
+    {
+      "athletic_level": "intermediate",
+      "max_reps": 1,
+      "min_distance": 200,
+      "max_distance": 400,
+      "permitted_distance_details": [
+        {
+          "distance": 50,
+          "permitted_set_types": [
+            "AEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS",
+            "INCREMENTAL_THRESHOLD"
+          ],
+          "rep_detail": {
+            "min": 2,
+            "max": 4
+          }
+        },
+        {
+          "distance": 100,
+          "permitted_set_types": [
+            "AEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS",
+            "INCREMENTAL_THRESHOLD"
+          ],
+          "rep_detail": {
+            "min": 1,
+            "max": 2
+          }
+        },
+        {
+          "distance": 150,
+          "permitted_set_types": [
+            "AEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS"
+          ],
+          "rep_detail": {
+            "min": 1,
+            "max": 2
+          }
+        },
+        {
+          "distance": 200,
+          "permitted_set_types": [
+            "AEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS"
+          ],
+          "rep_detail": {
+            "min": 1,
+            "max": 1
+          }
+        }
+      ]
+    },
+    {
+      "athletic_level": "advanced",
+      "max_reps": 2,
+      "min_distance": 300,
+      "max_distance": 400,
+      "permitted_distance_details": [
+        {
+          "distance": 50,
+          "permitted_set_types": [
+            "AEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS"
+          ],
+          "rep_detail": {
+            "min": 2,
+            "max": 4
+          }
+        },
+        {
+          "distance": 100,
+          "permitted_set_types": [
+            "AEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS"
+          ],
+          "rep_detail": {
+            "min": 2,
+            "max": 4
+          }
+        },
+        {
+          "distance": 150,
+          "permitted_set_types": [
+            "AEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS"
+          ],
+          "rep_detail": {
+            "min":1,
+            "max": 2
+          }
+        },
+        {
+          "distance": 200,
+          "permitted_set_types": [
+            "AEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS"
+          ],
+          "rep_detail": {
+            "min": 1,
+            "max": 2
+          }
+        },
+        {
+          "distance": 300,
+          "permitted_set_types": [
+            "AEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS"
+          ],
+          "rep_detail": {
+            "min": 1,
+            "max": 1
+          }
+        },
+        {
+          "distance": 400,
+          "permitted_set_types": [
+            "AEROBIC",
+            "FINS",
+            "FIN_HAND_PADS",
+            "HAND_PADS"
+          ],
+          "rep_detail": {
+            "min": 1,
+            "max": 1
+          }
+        }
+      ]
+    }
+  ]
+}
