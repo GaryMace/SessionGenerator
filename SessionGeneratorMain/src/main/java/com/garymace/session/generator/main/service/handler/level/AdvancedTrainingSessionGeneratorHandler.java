@@ -15,10 +15,12 @@ import com.garymace.session.generator.main.service.handler.TrainingSessionGenera
 import com.google.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import utils.RandomUtils;
 import utils.session.SessionBuilderUtils;
 
 import java.util.HashSet;
 import java.util.Optional;
+import java.util.Random;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -41,9 +43,9 @@ public class AdvancedTrainingSessionGeneratorHandler implements TrainingSessionG
     private Set<SwimTrainingSession> generateTrainingSessions(Profile profile) {
         return Stream.generate(() ->
                 SwimTrainingSession.builder()
-                        .setWarmupSessionStageDetails(generateSession(profile, SessionStageType.MAINSET))
+                        .setWarmupSessionStageDetails(generateSession(profile, SessionStageType.WARMUP))
                         .setMainsetSessionStageDetails(generateSession(profile, SessionStageType.MAINSET))
-                        .setCooldownSessionStageDetails(generateSession(profile, SessionStageType.MAINSET))
+                        .setCooldownSessionStageDetails(generateSession(profile, SessionStageType.COOLDOWN))
                         .build()
         ).limit(profile.getWeeklySessionPreference())
         .collect(Collectors.toSet());
@@ -51,12 +53,12 @@ public class AdvancedTrainingSessionGeneratorHandler implements TrainingSessionG
 
     private SessionStageDetails generateSession(Profile profile, SessionStageType sessionStageType) {
         SessionRules sessionRules = sessionRulesService.getRules(profile, sessionStageType);
-        int maxDistance = sessionRules.getMaxDistance();
+        int sessionDistance = RandomUtils.getInRange(sessionRules.getMinDistance(), sessionRules.getMaxDistance());
         int currentDistance = 0;
         int currentSets = 0;
 
         Set<SessionSet> sessionSets = new HashSet<>();
-        while (currentDistance < maxDistance) {
+        while (currentDistance < sessionDistance) {
             LOG.info("Set's are currently: {}", sessionSets);
             SessionBuilderAction sessionBuilderAction = SessionBuilderUtils.decide(SessionBuilderParams.builder()
                     .setCurrentDistance(currentDistance)

@@ -11,14 +11,14 @@ import com.google.inject.Inject;
 
 import java.util.Map;
 
-public class SessionBriefGeneratorHandlerUtils {
+public class TrainingSessionGeneratorHandlerUtils {
 
     private Map<AthleticLevel, TrainingSessionGeneratorBaseHandler> athleticLevelToTrainingSessionGeneratorHandlers;
 
     @Inject
-    public SessionBriefGeneratorHandlerUtils(AdvancedTrainingSessionGeneratorHandler advancedTrainingSessionGeneratorHandler,
-                                             BeginnerTrainingSessionGeneratorHandler beginnerTrainingSessionGeneratorHandler,
-                                             IntermediateTrainingSessionGeneratorHandler intermediateTrainingSessionGeneratorHandler) {
+    public TrainingSessionGeneratorHandlerUtils(AdvancedTrainingSessionGeneratorHandler advancedTrainingSessionGeneratorHandler,
+                                                BeginnerTrainingSessionGeneratorHandler beginnerTrainingSessionGeneratorHandler,
+                                                IntermediateTrainingSessionGeneratorHandler intermediateTrainingSessionGeneratorHandler) {
         athleticLevelToTrainingSessionGeneratorHandlers = ImmutableMap.of(
                 AthleticLevel.ADVANCED, advancedTrainingSessionGeneratorHandler,
                 AthleticLevel.BEGINNER, beginnerTrainingSessionGeneratorHandler,

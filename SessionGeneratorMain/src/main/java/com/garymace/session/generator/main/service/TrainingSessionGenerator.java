@@ -7,7 +7,7 @@ import com.garymace.session.generator.main.service.handler.TrainingSessionGenera
 import com.google.inject.Inject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import utils.handler.SessionBriefGeneratorHandlerUtils;
+import utils.handler.TrainingSessionGeneratorHandlerUtils;
 
 import java.util.Arrays;
 import java.util.Map;
@@ -19,8 +19,8 @@ public class TrainingSessionGenerator {
     private final Map<AthleticLevel, TrainingSessionGeneratorBaseHandler> athleticLevelToSessionBriefHandlers;
 
     @Inject
-    public TrainingSessionGenerator(SessionBriefGeneratorHandlerUtils sessionBriefGeneratorHandlerUtils) {
-        this.athleticLevelToSessionBriefHandlers = sessionBriefGeneratorHandlerUtils.getSessionBriefGeneratorHandlers();
+    public TrainingSessionGenerator(TrainingSessionGeneratorHandlerUtils trainingSessionGeneratorHandlerUtils) {
+        this.athleticLevelToSessionBriefHandlers = trainingSessionGeneratorHandlerUtils.getSessionBriefGeneratorHandlers();
     }
 
     public <T extends TrainingSessionBase> Set<T> generateFrom(Profile profile) {
