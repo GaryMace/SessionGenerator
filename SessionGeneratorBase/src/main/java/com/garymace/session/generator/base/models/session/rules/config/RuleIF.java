@@ -15,6 +15,7 @@ import java.util.Set;
 public interface RuleIF {
     AthleticLevel getAthleticLevel();
     int getMaxReps();
+    int getMinDistance();
     int getMaxDistance();
     Set<DistanceDetail> getPermittedDistanceDetails();
 }

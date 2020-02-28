@@ -2,13 +2,13 @@ package utils.session;
 
 import com.garymace.session.generator.base.models.session.SessionSet;
 import com.garymace.session.generator.base.models.session.SessionSetType;
-import com.garymace.session.generator.base.models.session.SessionStageType;
 import com.garymace.session.generator.base.models.session.SetItem;
 import com.garymace.session.generator.base.models.session.builder.SessionBuilderAction;
 import com.garymace.session.generator.base.models.session.builder.SessionBuilderParams;
 import com.garymace.session.generator.base.models.session.rules.SessionRules;
 import com.garymace.session.generator.base.models.session.rules.config.DistanceDetail;
 import com.google.common.collect.ImmutableList;
+
 import utils.CollectionUtils;
 
 import java.util.Random;
@@ -19,16 +19,13 @@ public class SessionBuilderUtils {
             sessionBuilderParams.getCurrentDistance() >= sessionBuilderParams.getMaxDistance();
     private static final Predicate<SessionBuilderParams> MAX_REPS_REACHED = (sessionBuilderParams) ->
             sessionBuilderParams.getCurrentReps() >= sessionBuilderParams.getMaxReps();
-    private static final Predicate<SessionBuilderParams> SHOULD_PERFORM_NEW_ACTION = (sessionBuilderParams) ->
-            sessionBuilderParams.getCurrentDistance() >= 0 && (int)(Math.random() * 100) <= 60;
 
     public SessionBuilderUtils() {
 
     }
 
     public static SessionBuilderAction decide(SessionBuilderParams sessionBuilderParams) {
-        if (MAX_DISTANCE_REACHED.test(sessionBuilderParams)
-                || !SHOULD_PERFORM_NEW_ACTION.test(sessionBuilderParams)) {
+        if (MAX_DISTANCE_REACHED.test(sessionBuilderParams)) {
             return SessionBuilderAction.STOP;
         }
         SessionBuilderAction action = SessionBuilderAction.from((int) Math.round(Math.random()));

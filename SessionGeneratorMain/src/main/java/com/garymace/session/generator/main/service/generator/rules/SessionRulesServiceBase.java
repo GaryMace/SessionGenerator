@@ -36,6 +36,7 @@ public class SessionRulesServiceBase {
 
         return Optional.of(SessionRules.builder()
                 .setMaxReps(maybeRule.get().getMaxReps())
+                .setMinDistance(maybeRule.get().getMinDistance())
                 .setMaxDistance(maybeRule.get().getMaxDistance())
                 .setSessionStageType(sessionStageType)
                 .setPermittedDistanceDetails(maybeRule.get().getPermittedDistanceDetails())

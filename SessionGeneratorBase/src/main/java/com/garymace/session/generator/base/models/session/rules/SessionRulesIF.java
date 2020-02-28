@@ -12,6 +12,7 @@ import java.util.Set;
 public interface SessionRulesIF {
     SessionStageType getSessionStageType();
     int getMaxReps();
+    int getMinDistance();
     int getMaxDistance();
     Set<DistanceDetail> getPermittedDistanceDetails();
 }
