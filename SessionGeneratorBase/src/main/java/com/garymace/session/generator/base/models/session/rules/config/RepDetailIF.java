@@ -9,6 +9,6 @@ import org.immutables.value.Value;
 @HubSpotStyle
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public interface RepDetailIF {
-    int getMin();
-    int getMax();
+  int getMin();
+  int getMax();
 }

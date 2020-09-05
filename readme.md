@@ -64,7 +64,7 @@ The software will generate sessions similar to the below:
          {
             "setReps":4,
             "postSessionRestSeconds":20,
-            "sessionSetType":"HAND_PADS",
+            "setType":"HAND_PADS",
             "setItems":[
                {
                   "distance":300,
@@ -75,7 +75,7 @@ The software will generate sessions similar to the below:
          {
             "setReps":2,
             "postSessionRestSeconds":20,
-            "sessionSetType":"FIN_HAND_PADS",
+            "setType":"FIN_HAND_PADS",
             "setItems":[
                {
                   "distance":150,
@@ -91,7 +91,7 @@ The software will generate sessions similar to the below:
          {
             "setReps":4,
             "postSessionRestSeconds":20,
-            "sessionSetType":"FIN_HAND_PADS",
+            "setType":"FIN_HAND_PADS",
             "setItems":[
                {
                   "distance":50,
@@ -102,7 +102,7 @@ The software will generate sessions similar to the below:
          {
             "setReps":3,
             "postSessionRestSeconds":20,
-            "sessionSetType":"AEROBIC",
+            "setType":"AEROBIC",
             "setItems":[
                {
                   "distance":100,
@@ -118,7 +118,7 @@ The software will generate sessions similar to the below:
          {
             "setReps":6,
             "postSessionRestSeconds":20,
-            "sessionSetType":"RECOVERY",
+            "setType":"RECOVERY",
             "setItems":[
                {
                   "distance":50,
@@ -129,7 +129,7 @@ The software will generate sessions similar to the below:
          {
             "setReps":1,
             "postSessionRestSeconds":20,
-            "sessionSetType":"RECOVERY",
+            "setType":"RECOVERY",
             "setItems":[
                {
                   "distance":100,

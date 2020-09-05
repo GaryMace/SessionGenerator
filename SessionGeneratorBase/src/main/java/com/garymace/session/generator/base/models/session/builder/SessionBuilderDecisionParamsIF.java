@@ -5,9 +5,9 @@ import org.immutables.value.Value;
 
 @Value.Immutable
 @HubSpotStyle
-public interface SessionBuilderParamsIF {
-    int getCurrentDistance();
-    int getCurrentReps();
-    int getMaxDistance();
-    int getMaxReps();
+public interface SessionBuilderDecisionParamsIF {
+  int getCurrentDistance();
+  int getCurrentReps();
+  int getMaxDistance();
+  int getMaxReps();
 }

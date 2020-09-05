@@ -11,7 +11,7 @@ import org.immutables.value.Value;
 @HubSpotStyle
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public interface ProfileIF {
-    AthleticLevel getAthleticLevel();
-    int getWeeklySessionPreference();
-    SportType getSportType();
+  AthleticLevel getAthleticLevel();
+  int getWeeklySessionPreference();
+  SportType getSportType();
 }

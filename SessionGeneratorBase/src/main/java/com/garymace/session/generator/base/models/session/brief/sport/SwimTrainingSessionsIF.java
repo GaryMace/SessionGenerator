@@ -6,5 +6,5 @@ import org.immutables.value.Value;
 
 @Value.Immutable
 @HubSpotStyle
-public interface SwimTrainingSessionsIF extends TrainingSessionsBase<SwimTrainingSession> {
-}
+public interface SwimTrainingSessionsIF
+  extends TrainingSessionsBase<SwimTrainingSession> {}

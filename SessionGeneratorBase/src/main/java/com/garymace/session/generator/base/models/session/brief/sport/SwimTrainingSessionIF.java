@@ -8,5 +8,5 @@ import org.immutables.value.Value;
 
 @Value.Immutable
 @HubSpotStyle
-public interface SwimTrainingSessionIF extends TrainingSessionBase, TrainingSessionWarmup, TrainingSessionCooldown {
-}
+public interface SwimTrainingSessionIF
+  extends TrainingSessionBase, TrainingSessionWarmup, TrainingSessionCooldown {}

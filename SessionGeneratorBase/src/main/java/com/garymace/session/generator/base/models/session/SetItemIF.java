@@ -6,6 +6,6 @@ import org.immutables.value.Value;
 @Value.Immutable
 @HubSpotStyle
 public interface SetItemIF {
-    int getDistance();
-    int getRestSeconds();
+  int getDistance();
+  int getRestSeconds();
 }
