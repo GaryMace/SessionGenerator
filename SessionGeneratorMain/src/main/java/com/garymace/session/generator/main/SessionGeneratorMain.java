@@ -13,6 +13,7 @@ import java.util.Set;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import utils.ProfileLoadingUtils;
+import utils.TrainingSessionLogger;
 
 public class SessionGeneratorMain {
   private static final Logger LOG = LoggerFactory.getLogger(SessionGeneratorMain.class);
@@ -23,9 +24,7 @@ public class SessionGeneratorMain {
 
   public static void main(String[] args) throws JsonProcessingException {
     Injector injector = Guice.createInjector(new SessionGeneratorModule());
-    TrainingSessionGenerator trainingSessionGenerator = injector.getInstance(
-      TrainingSessionGenerator.class
-    );
+
     ObjectMapper objectMapper = injector.getInstance(ObjectMapper.class);
 
     LOG.info("Starting programme");
@@ -38,15 +37,17 @@ public class SessionGeneratorMain {
       );
     }
 
-    Optional<Profile> maybeProfile = loadProfile(injector, args);
-
-    Set<SwimTrainingSession> trainingSessions = trainingSessionGenerator.generateFrom(
-      maybeProfile.get()
+    Profile maybeProfile = loadProfile(injector, args);
+    Set<SwimTrainingSession> trainingSessions = generateSwimTrainingSession(
+      injector,
+      maybeProfile
     );
     LOG.info("Session is: {}", objectMapper.writeValueAsString(trainingSessions));
+
+    TrainingSessionLogger.log(trainingSessions);
   }
 
-  private static Optional<Profile> loadProfile(Injector injector, String[] args) {
+  private static Profile loadProfile(Injector injector, String[] args) {
     ProfileLoadingUtils profileLoadingUtils = injector.getInstance(
       ProfileLoadingUtils.class
     );
@@ -55,6 +56,16 @@ public class SessionGeneratorMain {
     if (!maybeProfile.isPresent()) {
       throw new RuntimeException("An error occurred while attempting to load profile");
     }
-    return maybeProfile;
+    return maybeProfile.get();
+  }
+
+  private static Set<SwimTrainingSession> generateSwimTrainingSession(
+    Injector injector,
+    Profile profile
+  ) {
+    TrainingSessionGenerator trainingSessionGenerator = injector.getInstance(
+      TrainingSessionGenerator.class
+    );
+    return trainingSessionGenerator.generateFrom(profile);
   }
 }
