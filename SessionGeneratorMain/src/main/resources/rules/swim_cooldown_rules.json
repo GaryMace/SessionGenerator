@@ -12,10 +12,28 @@
             "AEROBIC",
             "RECOVERY"
           ],
-          "rep_detail": {
-            "min": 1,
-            "max": 2
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 35
+            },
+            {
+              "set_type": "RECOVERY",
+              "rest": 25
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 1,
+              "max": 2
+            },
+            {
+              "set_type": "RECOVERY",
+              "min": 1,
+              "max": 2
+            }
+          ]
         },
         {
           "distance": 100,
@@ -23,10 +41,28 @@
             "AEROBIC",
             "RECOVERY"
           ],
-          "rep_detail": {
-            "min": 1,
-            "max": 1
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 50
+            },
+            {
+              "set_type": "RECOVERY",
+              "rest": 40
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 1,
+              "max": 1
+            },
+            {
+              "set_type": "RECOVERY",
+              "min": 1,
+              "max": 1
+            }
+          ]
         }
       ]
     },
@@ -42,10 +78,28 @@
             "AEROBIC",
             "RECOVERY"
           ],
-          "rep_detail": {
-            "min": 1,
-            "max": 4
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 25
+            },
+            {
+              "set_type": "RECOVERY",
+              "rest": 20
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 1,
+              "max": 4
+            },
+            {
+              "set_type": "RECOVERY",
+              "min": 1,
+              "max": 4
+            }
+          ]
         },
         {
           "distance": 100,
@@ -53,10 +107,28 @@
             "AEROBIC",
             "RECOVERY"
           ],
-          "rep_detail": {
-            "min": 1,
-            "max": 2
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 35
+            },
+            {
+              "set_type": "RECOVERY",
+              "rest": 25
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 1,
+              "max": 2
+            },
+            {
+              "set_type": "RECOVERY",
+              "min": 1,
+              "max": 2
+            }
+          ]
         },
         {
           "distance": 150,
@@ -64,10 +136,28 @@
             "AEROBIC",
             "RECOVERY"
           ],
-          "rep_detail": {
-            "min": 1,
-            "max": 1
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 40
+            },
+            {
+              "set_type": "RECOVERY",
+              "rest": 30
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 1,
+              "max": 1
+            },
+            {
+              "set_type": "RECOVERY",
+              "min": 1,
+              "max": 1
+            }
+          ]
         },
         {
           "distance": 200,
@@ -75,18 +165,36 @@
             "AEROBIC",
             "RECOVERY"
           ],
-          "rep_detail": {
-            "min": 1,
-            "max": 1
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 40
+            },
+            {
+              "set_type": "RECOVERY",
+              "rest": 30
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 1,
+              "max": 1
+            },
+            {
+              "set_type": "RECOVERY",
+              "min": 1,
+              "max": 1
+            }
+          ]
         }
       ]
     },
     {
       "athletic_level": "advanced",
       "max_reps": 1,
-      "min_distance": 100,
-      "max_distance": 300,
+      "min_distance": 200,
+      "max_distance": 400,
       "permitted_distance_details": [
         {
           "distance": 50,
@@ -94,10 +202,28 @@
             "AEROBIC",
             "RECOVERY"
           ],
-          "rep_detail": {
-            "min": 2,
-            "max": 6
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 10
+            },
+            {
+              "set_type": "RECOVERY",
+              "rest": 5
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 2,
+              "max": 6
+            },
+            {
+              "set_type": "RECOVERY",
+              "min": 2,
+              "max": 6
+            }
+          ]
         },
         {
           "distance": 100,
@@ -105,10 +231,28 @@
             "AEROBIC",
             "RECOVERY"
           ],
-          "rep_detail": {
-            "min": 1,
-            "max": 3
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 10
+            },
+            {
+              "set_type": "RECOVERY",
+              "rest": 5
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 1,
+              "max": 3
+            },
+            {
+              "set_type": "RECOVERY",
+              "min": 1,
+              "max": 3
+            }
+          ]
         },
         {
           "distance": 150,
@@ -116,10 +260,28 @@
             "AEROBIC",
             "RECOVERY"
           ],
-          "rep_detail": {
-            "min": 1,
-            "max": 2
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 15
+            },
+            {
+              "set_type": "RECOVERY",
+              "rest": 10
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 1,
+              "max": 2
+            },
+            {
+              "set_type": "RECOVERY",
+              "min": 1,
+              "max": 2
+            }
+          ]
         },
         {
           "distance": 200,
@@ -127,10 +289,28 @@
             "AEROBIC",
             "RECOVERY"
           ],
-          "rep_detail": {
-            "min": 1,
-            "max": 1
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 30
+            },
+            {
+              "set_type": "RECOVERY",
+              "rest": 15
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 1,
+              "max": 1
+            },
+            {
+              "set_type": "RECOVERY",
+              "min": 1,
+              "max": 1
+            }
+          ]
         },
         {
           "distance": 300,
@@ -138,10 +318,28 @@
             "AEROBIC",
             "RECOVERY"
           ],
-          "rep_detail": {
-            "min": 1,
-            "max": 1
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 35
+            },
+            {
+              "set_type": "RECOVERY",
+              "rest": 20
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 1,
+              "max": 1
+            },
+            {
+              "set_type": "RECOVERY",
+              "min": 1,
+              "max": 1
+            }
+          ]
         }
       ]
     }

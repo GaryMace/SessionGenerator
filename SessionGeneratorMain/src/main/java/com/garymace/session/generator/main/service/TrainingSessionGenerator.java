@@ -1,5 +1,14 @@
 package com.garymace.session.generator.main.service;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.garymace.session.generator.base.models.profile.Profile;
 import com.garymace.session.generator.base.models.session.SessionSet;
 import com.garymace.session.generator.base.models.session.SessionStageDetails;
@@ -11,11 +20,7 @@ import com.garymace.session.generator.base.models.session.rules.SessionRules;
 import com.garymace.session.generator.main.service.generator.rules.SessionRulesService;
 import com.google.common.collect.ImmutableSet;
 import com.google.inject.Inject;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import utils.RandomUtils;
 import utils.session.SessionBuilderDecisionUtils;
 
@@ -59,12 +64,13 @@ public class TrainingSessionGenerator {
     SessionRules sessionRules = sessionRulesService.getRules(profile, sessionStageType);
     int maxDistanceForSessionStage = RandomUtils.getInSessionRulesRange(sessionRules);
     int currentSessionStageDistance = 0;
-    int currentSessionStageReps = 0;
+    int currentSessionStageReps = 1;
 
     ImmutableSet.Builder<SessionSet> sessionStageSetsBuilder = ImmutableSet.builder();
-    while (currentSessionStageDistance < maxDistanceForSessionStage) {
-      LOG.info("Set's are currently: {}", sessionStageSetsBuilder);
-      SessionBuilderDecision sessionBuilderDecision = SessionBuilderDecisionUtils.decideOnNextBuilderAction(
+    while (
+      (currentSessionStageDistance * currentSessionStageReps) < maxDistanceForSessionStage
+    ) {
+      SessionBuilderDecision sessionBuilderDecision = SessionBuilderDecisionUtils.decide(
         SessionBuilderDecisionParams
           .builder()
           .setCurrentDistance(currentSessionStageDistance)
@@ -84,7 +90,6 @@ public class TrainingSessionGenerator {
           break;
         case INCREASE_REPS:
           currentSessionStageReps++;
-          currentSessionStageDistance *= 2;
           break;
         case STOP:
           return SessionStageDetails
@@ -94,10 +99,45 @@ public class TrainingSessionGenerator {
             .build();
       }
     }
+    logOutStatsForGeneratedDistances(
+      maxDistanceForSessionStage,
+      currentSessionStageDistance * currentSessionStageReps
+    );
+
     return SessionStageDetails
       .builder()
       .setSetCount(currentSessionStageReps)
       .setSessionSets(sessionStageSetsBuilder.build())
       .build();
+  }
+
+  private void logOutStatsForGeneratedDistances(
+    int maxDistanceForSessionStage,
+    int currentSessionStageDistance
+  ) {
+    BigDecimal target = BigDecimal.valueOf((float) maxDistanceForSessionStage);
+    BigDecimal actual = BigDecimal.valueOf((float) currentSessionStageDistance);
+    BigDecimal actualAgainstTarget = actual.divide(target, 4, RoundingMode.HALF_UP);
+    actualAgainstTarget = actualAgainstTarget.setScale(4, RoundingMode.HALF_UP);
+
+    BigDecimal rawPercentage;
+    String percentageDifference;
+    if (actualAgainstTarget.floatValue() > 1) {
+      rawPercentage =
+        (actualAgainstTarget.subtract(BigDecimal.ONE)).multiply(BigDecimal.valueOf(100));
+      percentageDifference = String.format("+%%%s", rawPercentage);
+    } else {
+      rawPercentage =
+        BigDecimal
+          .valueOf(100)
+          .subtract(actualAgainstTarget.multiply(BigDecimal.valueOf(100)));
+      percentageDifference = String.format("-%%%s", rawPercentage);
+    }
+    LOG.info(
+      "Percentage difference between target({}) and actual({}) is {}",
+      maxDistanceForSessionStage,
+      currentSessionStageDistance,
+      percentageDifference
+    );
   }
 }

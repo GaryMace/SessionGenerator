@@ -1,5 +1,8 @@
 package utils.session;
 
+import java.util.Random;
+import java.util.function.Predicate;
+
 import com.garymace.session.generator.base.models.session.SessionSet;
 import com.garymace.session.generator.base.models.session.SetItem;
 import com.garymace.session.generator.base.models.session.SetType;
@@ -7,20 +10,21 @@ import com.garymace.session.generator.base.models.session.builder.SessionBuilder
 import com.garymace.session.generator.base.models.session.builder.SessionBuilderDecisionParams;
 import com.garymace.session.generator.base.models.session.rules.SessionRules;
 import com.garymace.session.generator.base.models.session.rules.config.DistanceDetail;
+import com.garymace.session.generator.base.models.session.rules.config.RepDetail;
 import com.google.common.collect.ImmutableList;
-import java.util.Random;
-import java.util.function.Predicate;
+
 import utils.CollectionUtils;
 
 public class SessionBuilderDecisionUtils {
   private static final Predicate<SessionBuilderDecisionParams> MAX_DISTANCE_REACHED = sessionBuilderParams ->
-    sessionBuilderParams.getCurrentDistance() >= sessionBuilderParams.getMaxDistance();
+    (sessionBuilderParams.getCurrentDistance() * sessionBuilderParams.getCurrentReps()) >=
+    sessionBuilderParams.getMaxDistance();
   private static final Predicate<SessionBuilderDecisionParams> MAX_REPS_REACHED = sessionBuilderParams ->
     sessionBuilderParams.getCurrentReps() >= sessionBuilderParams.getMaxReps();
 
   public SessionBuilderDecisionUtils() {}
 
-  public static SessionBuilderDecision decideOnNextBuilderAction(
+  public static SessionBuilderDecision decide(
     SessionBuilderDecisionParams sessionBuilderParams
   ) {
     if (MAX_DISTANCE_REACHED.test(sessionBuilderParams)) {
@@ -32,13 +36,27 @@ public class SessionBuilderDecisionUtils {
 
     switch (action) {
       case INCREASE_REPS:
-        if (MAX_REPS_REACHED.test(sessionBuilderParams)) {
+        if (
+          MAX_REPS_REACHED.test(sessionBuilderParams) ||
+          doesNewRepIncreaseCurrentDistanceTooMuch(sessionBuilderParams)
+        ) {
           return SessionBuilderDecision.ADD_NEW_SESSION_SET;
         }
         return action;
       default:
         return action;
     }
+  }
+
+  private static boolean doesNewRepIncreaseCurrentDistanceTooMuch(
+    SessionBuilderDecisionParams sessionBuilderParams
+  ) {
+    int distanceAfterRepIncrease =
+      sessionBuilderParams.getCurrentDistance() *
+      (sessionBuilderParams.getCurrentReps() + 1);
+    return MAX_DISTANCE_REACHED.test(
+      sessionBuilderParams.withCurrentDistance(distanceAfterRepIncrease)
+    );
   }
 
   public static SessionSet generateSessionSet(SessionRules sessionRules) {
@@ -48,11 +66,24 @@ public class SessionBuilderDecisionUtils {
     SetType setType = CollectionUtils.getRandomItem(
       distanceDetail.getPermittedSetTypes()
     );
-    int max = distanceDetail.getRepDetail().getMax();
-    int min = distanceDetail.getRepDetail().getMin();
+    RepDetail repDetailsForSetType = distanceDetail
+      .getRepDetails()
+      .stream()
+      .filter(repDetail -> repDetail.getSetType() == setType)
+      .findFirst()
+      .get(); // Let's just pretend it's always there.. for now
+    int max = repDetailsForSetType.getMax();
+    int min = repDetailsForSetType.getMin();
 
     Random random = new Random();
-    // For now just use static rest periods
+    int restSeconds = distanceDetail
+      .getPostSetRestDurations()
+      .stream()
+      .filter(repDetail -> repDetail.getSetType() == setType)
+      .findFirst()
+      .get()
+      .getRestDurationSeconds(); // Let's just pretend it's always there.. for now
+
     return SessionSet
       .builder()
       .setSetReps(random.nextInt((max - min) + 1) + min)
@@ -63,7 +94,7 @@ public class SessionBuilderDecisionUtils {
           SetItem
             .builder()
             .setDistance(distanceDetail.getDistance())
-            .setRestSeconds(20)
+            .setRestSeconds(restSeconds)
             .build()
         )
       )

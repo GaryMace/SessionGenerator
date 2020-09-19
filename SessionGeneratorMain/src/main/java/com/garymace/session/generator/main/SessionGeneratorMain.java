@@ -1,17 +1,18 @@
 package com.garymace.session.generator.main;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.Optional;
+import java.util.Set;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.garymace.session.generator.base.models.profile.Profile;
 import com.garymace.session.generator.base.models.session.brief.sport.SwimTrainingSession;
 import com.garymace.session.generator.main.config.SessionGeneratorModule;
 import com.garymace.session.generator.main.service.TrainingSessionGenerator;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import java.util.Optional;
-import java.util.Set;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+
 import utils.ProfileLoadingUtils;
 import utils.TrainingSessionLogger;
 
@@ -22,10 +23,8 @@ public class SessionGeneratorMain {
 
   public SessionGeneratorMain() {}
 
-  public static void main(String[] args) throws JsonProcessingException {
+  public static void main(String[] args) {
     Injector injector = Guice.createInjector(new SessionGeneratorModule());
-
-    ObjectMapper objectMapper = injector.getInstance(ObjectMapper.class);
 
     LOG.info("Starting programme");
     if (args.length != 1) {
@@ -42,7 +41,6 @@ public class SessionGeneratorMain {
       injector,
       maybeProfile
     );
-    LOG.info("Session is: {}", objectMapper.writeValueAsString(trainingSessions));
 
     TrainingSessionLogger.log(trainingSessions);
   }

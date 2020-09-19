@@ -59,7 +59,7 @@ public class TrainingSessionLogger {
                   sessionSet.getSetReps(),
                   setItem.getDistance(),
                   setItem.getRestSeconds(),
-                  sessionSet.getSetType()
+                  sessionSet.getSetType().getSetTypeLabel()
                 )
             )
             .reduce(String::concat)

@@ -15,10 +15,55 @@
             "HAND_PADS",
             "INCREMENTAL_THRESHOLD"
           ],
-          "rep_detail": {
-            "min": 1,
-            "max": 2
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 35
+            },
+            {
+              "set_type": "FINS",
+              "rest": 35
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "rest": 35
+            },
+            {
+              "set_type": "HAND_PADS",
+              "rest": 35
+            },
+            {
+              "set_type": "INCREMENTAL_THRESHOLD",
+              "rest": 45
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 1,
+              "max": 2
+            },
+            {
+              "set_type": "FINS",
+              "min": 1,
+              "max": 2
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "min": 1,
+              "max": 2
+            },
+            {
+              "set_type": "HAND_PADS",
+              "min": 1,
+              "max": 2
+            },
+            {
+              "set_type": "INCREMENTAL_THRESHOLD",
+              "min": 1,
+              "max": 2
+            }
+          ]
         },
         {
           "distance": 100,
@@ -28,10 +73,50 @@
             "FIN_HAND_PADS",
             "HAND_PADS"
           ],
-          "rep_detail": {
-            "min": 1,
-            "max": 1
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 45
+            },
+            {
+              "set_type": "FINS",
+              "rest": 45
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "rest": 45
+            },
+            {
+              "set_type": "HAND_PADS",
+              "rest": 45
+            },
+            {
+              "set_type": "INCREMENTAL_THRESHOLD",
+              "rest": 55
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 1,
+              "max": 1
+            },
+            {
+              "set_type": "FINS",
+              "min": 1,
+              "max": 1
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "min": 1,
+              "max": 1
+            },
+            {
+              "set_type": "HAND_PADS",
+              "min": 1,
+              "max": 1
+            }
+          ]
         }
       ]
     },
@@ -50,10 +135,55 @@
             "HAND_PADS",
             "INCREMENTAL_THRESHOLD"
           ],
-          "rep_detail": {
-            "min": 2,
-            "max": 4
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 20
+            },
+            {
+              "set_type": "FINS",
+              "rest": 20
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "rest": 20
+            },
+            {
+              "set_type": "HAND_PADS",
+              "rest": 20
+            },
+            {
+              "set_type": "INCREMENTAL_THRESHOLD",
+              "rest": 30
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 2,
+              "max": 4
+            },
+            {
+              "set_type": "FINS",
+              "min": 1,
+              "max": 4
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "min": 2,
+              "max": 4
+            },
+            {
+              "set_type": "HAND_PADS",
+              "min": 2,
+              "max": 4
+            },
+            {
+              "set_type": "INCREMENTAL_THRESHOLD",
+              "min": 2,
+              "max": 4
+            }
+          ]
         },
         {
           "distance": 100,
@@ -64,10 +194,55 @@
             "HAND_PADS",
             "INCREMENTAL_THRESHOLD"
           ],
-          "rep_detail": {
-            "min": 1,
-            "max": 2
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 25
+            },
+            {
+              "set_type": "FINS",
+              "rest": 25
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "rest": 25
+            },
+            {
+              "set_type": "HAND_PADS",
+              "rest": 25
+            },
+            {
+              "set_type": "INCREMENTAL_THRESHOLD",
+              "rest": 35
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 1,
+              "max": 2
+            },
+            {
+              "set_type": "FINS",
+              "min": 1,
+              "max": 2
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "min": 1,
+              "max": 2
+            },
+            {
+              "set_type": "HAND_PADS",
+              "min": 1,
+              "max": 2
+            },
+            {
+              "set_type": "INCREMENTAL_THRESHOLD",
+              "min": 1,
+              "max": 2
+            }
+          ]
         },
         {
           "distance": 150,
@@ -77,10 +252,46 @@
             "FIN_HAND_PADS",
             "HAND_PADS"
           ],
-          "rep_detail": {
-            "min": 1,
-            "max": 2
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 40
+            },
+            {
+              "set_type": "FINS",
+              "rest": 40
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "rest": 40
+            },
+            {
+              "set_type": "HAND_PADS",
+              "rest": 40
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 1,
+              "max": 2
+            },
+            {
+              "set_type": "FINS",
+              "min": 1,
+              "max": 2
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "min": 1,
+              "max": 2
+            },
+            {
+              "set_type": "HAND_PADS",
+              "min": 1,
+              "max": 2
+            }
+          ]
         },
         {
           "distance": 200,
@@ -90,10 +301,46 @@
             "FIN_HAND_PADS",
             "HAND_PADS"
           ],
-          "rep_detail": {
-            "min": 1,
-            "max": 1
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 40
+            },
+            {
+              "set_type": "FINS",
+              "rest": 40
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "rest": 40
+            },
+            {
+              "set_type": "HAND_PADS",
+              "rest": 40
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 1,
+              "max": 1
+            },
+            {
+              "set_type": "FINS",
+              "min": 1,
+              "max": 1
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "min": 1,
+              "max": 1
+            },
+            {
+              "set_type": "HAND_PADS",
+              "min": 1,
+              "max": 1
+            }
+          ]
         }
       ]
     },
@@ -111,10 +358,46 @@
             "FIN_HAND_PADS",
             "HAND_PADS"
           ],
-          "rep_detail": {
-            "min": 2,
-            "max": 4
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 10
+            },
+            {
+              "set_type": "FINS",
+              "rest": 10
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "rest": 10
+            },
+            {
+              "set_type": "HAND_PADS",
+              "rest": 10
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 2,
+              "max": 4
+            },
+            {
+              "set_type": "FINS",
+              "min": 2,
+              "max": 4
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "min": 2,
+              "max": 4
+            },
+            {
+              "set_type": "HAND_PADS",
+              "min": 2,
+              "max": 4
+            }
+          ]
         },
         {
           "distance": 100,
@@ -124,10 +407,46 @@
             "FIN_HAND_PADS",
             "HAND_PADS"
           ],
-          "rep_detail": {
-            "min": 2,
-            "max": 4
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 10
+            },
+            {
+              "set_type": "FINS",
+              "rest": 10
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "rest": 10
+            },
+            {
+              "set_type": "HAND_PADS",
+              "rest": 10
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 2,
+              "max": 4
+            },
+            {
+              "set_type": "FINS",
+              "min": 2,
+              "max": 4
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "min": 2,
+              "max": 4
+            },
+            {
+              "set_type": "HAND_PADS",
+              "min": 2,
+              "max": 4
+            }
+          ]
         },
         {
           "distance": 150,
@@ -137,10 +456,46 @@
             "FIN_HAND_PADS",
             "HAND_PADS"
           ],
-          "rep_detail": {
-            "min":1,
-            "max": 2
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 15
+            },
+            {
+              "set_type": "FINS",
+              "rest": 15
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "rest": 15
+            },
+            {
+              "set_type": "HAND_PADS",
+              "rest": 15
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 1,
+              "max": 2
+            },
+            {
+              "set_type": "FINS",
+              "min": 1,
+              "max": 2
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "min": 1,
+              "max": 2
+            },
+            {
+              "set_type": "HAND_PADS",
+              "min": 1,
+              "max": 2
+            }
+          ]
         },
         {
           "distance": 200,
@@ -150,10 +505,46 @@
             "FIN_HAND_PADS",
             "HAND_PADS"
           ],
-          "rep_detail": {
-            "min": 1,
-            "max": 2
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 15
+            },
+            {
+              "set_type": "FINS",
+              "rest": 15
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "rest": 15
+            },
+            {
+              "set_type": "HAND_PADS",
+              "rest": 15
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 1,
+              "max": 2
+            },
+            {
+              "set_type": "FINS",
+              "min": 1,
+              "max": 2
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "min": 1,
+              "max": 2
+            },
+            {
+              "set_type": "HAND_PADS",
+              "min": 1,
+              "max": 2
+            }
+          ]
         },
         {
           "distance": 300,
@@ -163,10 +554,46 @@
             "FIN_HAND_PADS",
             "HAND_PADS"
           ],
-          "rep_detail": {
-            "min": 1,
-            "max": 1
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 20
+            },
+            {
+              "set_type": "FINS",
+              "rest": 20
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "rest": 20
+            },
+            {
+              "set_type": "HAND_PADS",
+              "rest": 20
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 1,
+              "max": 1
+            },
+            {
+              "set_type": "FINS",
+              "min": 1,
+              "max": 1
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "min": 1,
+              "max": 1
+            },
+            {
+              "set_type": "HAND_PADS",
+              "min": 1,
+              "max": 1
+            }
+          ]
         },
         {
           "distance": 400,
@@ -176,10 +603,46 @@
             "FIN_HAND_PADS",
             "HAND_PADS"
           ],
-          "rep_detail": {
-            "min": 1,
-            "max": 1
-          }
+          "post_set_rest_durations": [
+            {
+              "set_type": "AEROBIC",
+              "rest": 30
+            },
+            {
+              "set_type": "FINS",
+              "rest": 30
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "rest": 30
+            },
+            {
+              "set_type": "HAND_PADS",
+              "rest": 30
+            }
+          ],
+          "rep_details": [
+            {
+              "set_type": "AEROBIC",
+              "min": 1,
+              "max": 1
+            },
+            {
+              "set_type": "FINS",
+              "min": 1,
+              "max": 1
+            },
+            {
+              "set_type": "FIN_HAND_PADS",
+              "min": 1,
+              "max": 1
+            },
+            {
+              "set_type": "HAND_PADS",
+              "min": 1,
+              "max": 1
+            }
+          ]
         }
       ]
     }
