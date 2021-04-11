@@ -30,10 +30,26 @@ public class TrainingSessionGenerator {
   );
 
   private final SessionRulesService sessionRulesService;
+  private final SessionSetService sessionSetService;
 
   @Inject
-  public TrainingSessionGenerator(SessionRulesService sessionRulesService) {
+  public TrainingSessionGenerator(
+    SessionRulesService sessionRulesService,
+    SessionSetService sessionSetService
+  ) {
     this.sessionRulesService = sessionRulesService;
+    this.sessionSetService = sessionSetService;
+  }
+
+  public BigDecimal runEvaluation(Profile profile, SessionStageType stageType) {
+    BigDecimal overallPercentage = BigDecimal.ZERO;
+    int curr = 0;
+    int total = 1000;
+    while (curr++ < total) {
+      overallPercentage = overallPercentage.add(trialSessionForStage(profile, stageType));
+    }
+
+    return overallPercentage.divide(BigDecimal.valueOf(total), 4, RoundingMode.HALF_UP);
   }
 
   public Set<SwimTrainingSession> generateFrom(Profile profile) {
@@ -63,17 +79,16 @@ public class TrainingSessionGenerator {
   ) {
     SessionRules sessionRules = sessionRulesService.getRules(profile, sessionStageType);
     int maxDistanceForSessionStage = RandomUtils.getInSessionRulesRange(sessionRules);
-    int currentSessionStageDistance = 0;
+    int currentDistanceWithoutReps = 0;
     int currentSessionStageReps = 1;
+    int totalDistanceWithReps = 0;
 
     ImmutableSet.Builder<SessionSet> sessionStageSetsBuilder = ImmutableSet.builder();
-    while (
-      (currentSessionStageDistance * currentSessionStageReps) < maxDistanceForSessionStage
-    ) {
+    while (totalDistanceWithReps < maxDistanceForSessionStage) {
       SessionBuilderDecision sessionBuilderDecision = SessionBuilderDecisionUtils.decide(
         SessionBuilderDecisionParams
           .builder()
-          .setCurrentDistance(currentSessionStageDistance)
+          .setCurrentDistance(currentDistanceWithoutReps)
           .setCurrentReps(currentSessionStageReps)
           .setMaxDistance(sessionRules.getMaxDistance())
           .setMaxReps(sessionRules.getMaxReps())
@@ -82,14 +97,23 @@ public class TrainingSessionGenerator {
 
       switch (sessionBuilderDecision) {
         case ADD_NEW_SESSION_SET:
-          SessionSet sessionSet = SessionBuilderDecisionUtils.generateSessionSet(
-            sessionRules
-          );
-          currentSessionStageDistance += sessionSet.getSetDistance();
+          SessionSet sessionSet = SessionSetService.generateSessionSet(sessionRules);
+          if (
+            SessionBuilderDecisionUtils.isSessionSetTooLarge(
+              sessionSet,
+              maxDistanceForSessionStage,
+              currentSessionStageReps
+            )
+          ) {
+            continue;
+          }
+          currentDistanceWithoutReps += sessionSet.getSetDistance();
+          totalDistanceWithReps = currentDistanceWithoutReps * currentSessionStageReps;
           sessionStageSetsBuilder.add(sessionSet);
           break;
         case INCREASE_REPS:
           currentSessionStageReps++;
+          totalDistanceWithReps = currentDistanceWithoutReps * currentSessionStageReps;
           break;
         case STOP:
           return SessionStageDetails
@@ -99,16 +123,62 @@ public class TrainingSessionGenerator {
             .build();
       }
     }
-    logOutStatsForGeneratedDistances(
-      maxDistanceForSessionStage,
-      currentSessionStageDistance * currentSessionStageReps
-    );
+    logOutStatsForGeneratedDistances(maxDistanceForSessionStage, totalDistanceWithReps);
 
     return SessionStageDetails
       .builder()
       .setSetCount(currentSessionStageReps)
       .setSessionSets(sessionStageSetsBuilder.build())
       .build();
+  }
+
+  private BigDecimal trialSessionForStage(
+    Profile profile,
+    SessionStageType sessionStageType
+  ) {
+    SessionRules sessionRules = sessionRulesService.getRules(profile, sessionStageType);
+    int maxDistanceForSessionStage = RandomUtils.getInSessionRulesRange(sessionRules);
+    int currentDistanceWithoutReps = 0;
+    int currentSessionStageReps = 1;
+    int totalDistanceWithReps = 0;
+
+    ImmutableSet.Builder<SessionSet> sessionStageSetsBuilder = ImmutableSet.builder();
+    while (totalDistanceWithReps < maxDistanceForSessionStage) {
+      SessionBuilderDecision sessionBuilderDecision = SessionBuilderDecisionUtils.decide(
+        SessionBuilderDecisionParams
+          .builder()
+          .setCurrentDistance(currentDistanceWithoutReps)
+          .setCurrentReps(currentSessionStageReps)
+          .setMaxDistance(sessionRules.getMaxDistance())
+          .setMaxReps(sessionRules.getMaxReps())
+          .build()
+      );
+
+      switch (sessionBuilderDecision) {
+        case ADD_NEW_SESSION_SET:
+          SessionSet sessionSet = SessionSetService.generateSessionSet(sessionRules);
+          if (
+            SessionBuilderDecisionUtils.isSessionSetTooLarge(
+              sessionSet,
+              maxDistanceForSessionStage,
+              currentSessionStageReps
+            )
+          ) {
+            continue;
+          }
+          currentDistanceWithoutReps += sessionSet.getSetDistance();
+          totalDistanceWithReps = currentDistanceWithoutReps * currentSessionStageReps;
+          sessionStageSetsBuilder.add(sessionSet);
+          break;
+        case INCREASE_REPS:
+          currentSessionStageReps++;
+          totalDistanceWithReps = currentDistanceWithoutReps * currentSessionStageReps;
+          break;
+        case STOP:
+          return getPercentageAccuracy(maxDistanceForSessionStage, totalDistanceWithReps);
+      }
+    }
+    return getPercentageAccuracy(maxDistanceForSessionStage, totalDistanceWithReps);
   }
 
   private void logOutStatsForGeneratedDistances(
@@ -120,17 +190,14 @@ public class TrainingSessionGenerator {
     BigDecimal actualAgainstTarget = actual.divide(target, 4, RoundingMode.HALF_UP);
     actualAgainstTarget = actualAgainstTarget.setScale(4, RoundingMode.HALF_UP);
 
-    BigDecimal rawPercentage;
+    BigDecimal rawPercentage = getPercentageAccuracy(
+      maxDistanceForSessionStage,
+      currentSessionStageDistance
+    );
     String percentageDifference;
     if (actualAgainstTarget.floatValue() > 1) {
-      rawPercentage =
-        (actualAgainstTarget.subtract(BigDecimal.ONE)).multiply(BigDecimal.valueOf(100));
       percentageDifference = String.format("+%%%s", rawPercentage);
     } else {
-      rawPercentage =
-        BigDecimal
-          .valueOf(100)
-          .subtract(actualAgainstTarget.multiply(BigDecimal.valueOf(100)));
       percentageDifference = String.format("-%%%s", rawPercentage);
     }
     LOG.info(
@@ -139,5 +206,27 @@ public class TrainingSessionGenerator {
       currentSessionStageDistance,
       percentageDifference
     );
+  }
+
+  private static BigDecimal getPercentageAccuracy(
+    int maxDistanceForSessionStage,
+    int currentSessionStageDistance
+  ) {
+    BigDecimal target = BigDecimal.valueOf((float) maxDistanceForSessionStage);
+    BigDecimal actual = BigDecimal.valueOf((float) currentSessionStageDistance);
+    BigDecimal actualAgainstTarget = actual.divide(target, 4, RoundingMode.HALF_UP);
+    actualAgainstTarget = actualAgainstTarget.setScale(4, RoundingMode.HALF_UP);
+
+    BigDecimal rawPercentage;
+    if (actualAgainstTarget.floatValue() > 1) {
+      rawPercentage =
+        (actualAgainstTarget.subtract(BigDecimal.ONE)).multiply(BigDecimal.valueOf(100));
+    } else {
+      rawPercentage =
+        BigDecimal
+          .valueOf(100)
+          .subtract(actualAgainstTarget.multiply(BigDecimal.valueOf(100)));
+    }
+    return rawPercentage;
   }
 }

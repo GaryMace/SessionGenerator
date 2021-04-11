@@ -1,15 +1,13 @@
 package utils;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.garymace.session.generator.base.models.session.SessionStageDetails;
 import com.garymace.session.generator.base.models.session.SetItem;
 import com.garymace.session.generator.base.models.session.brief.sport.SwimTrainingSession;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class TrainingSessionLogger {
   public static final Logger LOG = LoggerFactory.getLogger(TrainingSessionLogger.class);
@@ -55,11 +53,12 @@ public class TrainingSessionLogger {
             .map(
               setItem ->
                 String.format(
-                  "  %dx%dm %dsec/rec (%s)",
+                  "  %dx%dm %dsec/rec (%s)%s",
                   sessionSet.getSetReps(),
                   setItem.getDistance(),
                   setItem.getRestSeconds(),
-                  sessionSet.getSetType().getSetTypeLabel()
+                  sessionSet.getSetType().getSetTypeLabel(),
+                  setItems.size() > 1 ? "\n" : ""
                 )
             )
             .reduce(String::concat)

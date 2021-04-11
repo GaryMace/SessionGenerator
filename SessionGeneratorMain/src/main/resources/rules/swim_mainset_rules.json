@@ -195,6 +195,7 @@
             "FIN_HAND_PADS",
             "HAND_PADS",
             "INCREMENTAL_THRESHOLD",
+            "PYRAMID",
             "THRESHOLD",
             "TRIANGLE_SET"
           ],
@@ -221,6 +222,10 @@
             },
             {
               "set_type": "INCREMENTAL_THRESHOLD",
+              "rest": 20
+            },
+            {
+              "set_type": "PYRAMID",
               "rest": 20
             },
             {
@@ -262,6 +267,11 @@
               "set_type": "INCREMENTAL_THRESHOLD",
               "min": 2,
               "max": 10
+            },
+            {
+              "set_type": "PYRAMID",
+              "min": 1,
+              "max": 1
             },
             {
               "set_type": "THRESHOLD",
@@ -284,6 +294,7 @@
             "FIN_HAND_PADS",
             "HAND_PADS",
             "INCREMENTAL_THRESHOLD",
+            "PYRAMID",
             "THRESHOLD",
             "TRIANGLE_SET"
           ],
@@ -310,6 +321,10 @@
             },
             {
               "set_type": "INCREMENTAL_THRESHOLD",
+              "rest": 25
+            },
+            {
+              "set_type": "PYRAMID",
               "rest": 25
             },
             {
@@ -351,6 +366,11 @@
               "set_type": "INCREMENTAL_THRESHOLD",
               "min": 2,
               "max": 4
+            },
+            {
+              "set_type": "PYRAMID",
+              "min": 1,
+              "max": 1
             },
             {
               "set_type": "THRESHOLD",
@@ -559,6 +579,7 @@
             "FIN_HAND_PADS",
             "HAND_PADS",
             "INCREMENTAL_THRESHOLD",
+            "PYRAMID",
             "THRESHOLD",
             "TRIANGLE_SET"
           ],
@@ -586,6 +607,10 @@
             {
               "set_type": "INCREMENTAL_THRESHOLD",
               "rest": 15
+            },
+            {
+              "set_type": "PYRAMID",
+              "rest": 10
             },
             {
               "set_type": "THRESHOLD",
@@ -628,6 +653,11 @@
               "max": 10
             },
             {
+              "set_type": "PYRAMID",
+              "min": 1,
+              "max": 1
+            },
+            {
               "set_type": "THRESHOLD",
               "min": 4,
               "max": 20
@@ -648,6 +678,7 @@
             "FIN_HAND_PADS",
             "HAND_PADS",
             "INCREMENTAL_THRESHOLD",
+            "PYRAMID",
             "THRESHOLD",
             "TRIANGLE_SET"
           ],
@@ -675,6 +706,10 @@
             {
               "set_type": "INCREMENTAL_THRESHOLD",
               "rest": 20
+            },
+            {
+              "set_type": "PYRAMID",
+              "rest": 15
             },
             {
               "set_type": "THRESHOLD",
@@ -715,6 +750,11 @@
               "set_type": "INCREMENTAL_THRESHOLD",
               "min": 4,
               "max": 6
+            },
+            {
+              "set_type": "PYRAMID",
+              "min": 1,
+              "max": 1
             },
             {
               "set_type": "THRESHOLD",
@@ -826,6 +866,7 @@
             "FIN_HAND_PADS",
             "HAND_PADS",
             "INCREMENTAL_THRESHOLD",
+            "PYRAMID",
             "THRESHOLD",
             "TRIANGLE_SET"
           ],
@@ -853,6 +894,10 @@
             {
               "set_type": "INCREMENTAL_THRESHOLD",
               "rest": 30
+            },
+            {
+              "set_type": "PYRAMID",
+              "rest": 20
             },
             {
               "set_type": "THRESHOLD",
@@ -895,6 +940,11 @@
               "max": 2
             },
             {
+              "set_type": "PYRAMID",
+              "min": 1,
+              "max": 1
+            },
+            {
               "set_type": "THRESHOLD",
               "min": 2,
               "max": 2
@@ -912,6 +962,7 @@
             "AEROBIC",
             "ANAEROBIC",
             "INCREMENTAL_THRESHOLD",
+            "PYRAMID",
             "THRESHOLD"
           ],
           "post_set_rest_durations": [
@@ -928,6 +979,10 @@
               "rest": 30
             },
             {
+              "set_type": "PYRAMID",
+              "rest": 25
+            },
+            {
               "set_type": "THRESHOLD",
               "rest": 30
             }
@@ -947,6 +1002,11 @@
               "set_type": "INCREMENTAL_THRESHOLD",
               "min": 1,
               "max": 2
+            },
+            {
+              "set_type": "PYRAMID",
+              "min": 1,
+              "max": 1
             },
             {
               "set_type": "THRESHOLD",
@@ -961,6 +1021,7 @@
             "AEROBIC",
             "ANAEROBIC",
             "INCREMENTAL_THRESHOLD",
+            "PYRAMID",
             "THRESHOLD"
           ],
           "post_set_rest_durations": [
@@ -975,6 +1036,10 @@
             {
               "set_type": "INCREMENTAL_THRESHOLD",
               "rest": 40
+            },
+            {
+              "set_type": "PYRAMID",
+              "rest": 30
             },
             {
               "set_type": "THRESHOLD",
@@ -998,6 +1063,11 @@
               "max": 2
             },
             {
+              "set_type": "PYRAMID",
+              "min": 1,
+              "max": 1
+            },
+            {
               "set_type": "THRESHOLD",
               "min": 1,
               "max": 2
@@ -1009,6 +1079,7 @@
           "permitted_set_types": [
             "AEROBIC",
             "INCREMENTAL_THRESHOLD",
+            "PYRAMID",
             "THRESHOLD"
           ],
           "post_set_rest_durations": [
@@ -1019,6 +1090,10 @@
             {
               "set_type": "INCREMENTAL_THRESHOLD",
               "rest": 40
+            },
+            {
+              "set_type": "PYRAMID",
+              "rest": 30
             },
             {
               "set_type": "THRESHOLD",
@@ -1035,6 +1110,11 @@
               "set_type": "INCREMENTAL_THRESHOLD",
               "min": 1,
               "max": 2
+            },
+            {
+              "set_type": "PYRAMID",
+              "min": 1,
+              "max": 1
             },
             {
               "set_type": "THRESHOLD",

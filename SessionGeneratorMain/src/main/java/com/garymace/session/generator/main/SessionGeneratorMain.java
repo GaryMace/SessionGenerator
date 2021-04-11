@@ -1,5 +1,7 @@
 package com.garymace.session.generator.main;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Optional;
 import java.util.Set;
 
@@ -7,6 +9,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.garymace.session.generator.base.models.profile.Profile;
+import com.garymace.session.generator.base.models.session.SessionStageType;
 import com.garymace.session.generator.base.models.session.brief.sport.SwimTrainingSession;
 import com.garymace.session.generator.main.config.SessionGeneratorModule;
 import com.garymace.session.generator.main.service.TrainingSessionGenerator;
@@ -20,6 +23,7 @@ public class SessionGeneratorMain {
   private static final Logger LOG = LoggerFactory.getLogger(SessionGeneratorMain.class);
   private static final String VALID_INPUT =
     "{\"athletic_level\":\"...\", \"weekly_session_preference\":\"...\", \"sport_type\":\"...\"}";
+  private static final boolean RUN_EVALUATION = false;
 
   public SessionGeneratorMain() {}
 
@@ -41,6 +45,9 @@ public class SessionGeneratorMain {
       injector,
       maybeProfile
     );
+    if (RUN_EVALUATION) {
+      runEvaluation(injector, maybeProfile);
+    }
 
     TrainingSessionLogger.log(trainingSessions);
   }
@@ -65,5 +72,18 @@ public class SessionGeneratorMain {
       TrainingSessionGenerator.class
     );
     return trainingSessionGenerator.generateFrom(profile);
+  }
+
+  private static void runEvaluation(Injector injector, Profile profile) {
+    TrainingSessionGenerator trainingSessionGenerator = injector.getInstance(
+      TrainingSessionGenerator.class
+    );
+    BigDecimal res = trainingSessionGenerator.runEvaluation(
+      profile,
+      SessionStageType.MAINSET
+    );
+    res = res.setScale(4, RoundingMode.HALF_UP);
+
+    LOG.info("Average percentage accuracy: {}", res);
   }
 }
