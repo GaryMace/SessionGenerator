@@ -1,14 +1,5 @@
 package com.garymace.session.generator.main.service;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.garymace.session.generator.base.models.profile.Profile;
 import com.garymace.session.generator.base.models.session.SessionSet;
 import com.garymace.session.generator.base.models.session.SessionStageDetails;
@@ -20,7 +11,13 @@ import com.garymace.session.generator.base.models.session.rules.SessionRules;
 import com.garymace.session.generator.main.service.generator.rules.SessionRulesService;
 import com.google.common.collect.ImmutableSet;
 import com.google.inject.Inject;
-
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import utils.RandomUtils;
 import utils.session.SessionBuilderDecisionUtils;
 
@@ -32,9 +29,7 @@ public class TrainingSessionGenerator {
   private final SessionRulesService sessionRulesService;
 
   @Inject
-  public TrainingSessionGenerator(
-    SessionRulesService sessionRulesService
-  ) {
+  public TrainingSessionGenerator(SessionRulesService sessionRulesService) {
     this.sessionRulesService = sessionRulesService;
   }
 

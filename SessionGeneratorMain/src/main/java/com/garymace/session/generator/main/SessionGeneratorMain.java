@@ -1,13 +1,5 @@
 package com.garymace.session.generator.main;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.util.Optional;
-import java.util.Set;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import com.garymace.session.generator.base.models.profile.Profile;
 import com.garymace.session.generator.base.models.session.SessionStageType;
 import com.garymace.session.generator.base.models.session.brief.sport.SwimTrainingSession;
@@ -15,7 +7,12 @@ import com.garymace.session.generator.main.config.SessionGeneratorModule;
 import com.garymace.session.generator.main.service.TrainingSessionGenerator;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Optional;
+import java.util.Set;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import utils.ProfileLoadingUtils;
 import utils.TrainingSessionLogger;
 

@@ -4,7 +4,8 @@ import com.garymace.session.generator.service.resource.SessionGeneratorResource;
 import com.google.inject.Binder;
 import com.hubspot.dropwizard.guicier.DropwizardAwareModule;
 
-public class SessionGeneratorServiceModule extends DropwizardAwareModule<SessionGeneratorServiceConfiguration> {
+public class SessionGeneratorServiceModule
+  extends DropwizardAwareModule<SessionGeneratorServiceConfiguration> {
 
   @Override
   public void configure(Binder binder) {
@@ -12,7 +13,7 @@ public class SessionGeneratorServiceModule extends DropwizardAwareModule<Session
     if (getConfiguration().bindResources()) {
       binder.bind(SessionGeneratorResource.class);
     }
-/*
+    /*
     // You can also bind request/response filters
     if (getConfiguration().bindFilters()) {
       binder.bind(ExampleRequestFilter.class);

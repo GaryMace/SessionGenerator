@@ -1,7 +1,6 @@
 package com.garymace.session.generator.service.config;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import io.dropwizard.Configuration;
 
 public class SessionGeneratorServiceConfiguration extends Configuration {
