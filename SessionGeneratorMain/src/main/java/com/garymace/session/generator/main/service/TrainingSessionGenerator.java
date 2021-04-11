@@ -30,15 +30,12 @@ public class TrainingSessionGenerator {
   );
 
   private final SessionRulesService sessionRulesService;
-  private final SessionSetService sessionSetService;
 
   @Inject
   public TrainingSessionGenerator(
-    SessionRulesService sessionRulesService,
-    SessionSetService sessionSetService
+    SessionRulesService sessionRulesService
   ) {
     this.sessionRulesService = sessionRulesService;
-    this.sessionSetService = sessionSetService;
   }
 
   public BigDecimal runEvaluation(Profile profile, SessionStageType stageType) {
