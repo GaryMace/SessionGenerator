@@ -1,4 +1,4 @@
-package com.garymace.session.generator.main.service.generator.rules;
+package com.garymace.session.generator.service.shared.service.generator.rules;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.garymace.session.generator.base.models.profile.Profile;

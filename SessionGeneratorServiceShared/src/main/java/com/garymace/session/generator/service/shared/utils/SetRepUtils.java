@@ -1,4 +1,4 @@
-package utils;
+package com.garymace.session.generator.service.shared.utils;
 
 import com.garymace.session.generator.base.models.session.SetType;
 import com.garymace.session.generator.base.models.session.rules.config.RepDetail;

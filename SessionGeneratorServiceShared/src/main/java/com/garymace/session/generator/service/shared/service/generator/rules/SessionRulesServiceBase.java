@@ -1,4 +1,4 @@
-package com.garymace.session.generator.main.service.generator.rules;
+package com.garymace.session.generator.service.shared.service.generator.rules;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

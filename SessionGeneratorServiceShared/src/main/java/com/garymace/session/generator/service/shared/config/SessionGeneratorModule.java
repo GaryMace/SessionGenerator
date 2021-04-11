@@ -1,4 +1,4 @@
-package com.garymace.session.generator.main.config;
+package com.garymace.session.generator.service.shared.config;
 
 import com.google.inject.AbstractModule;
 

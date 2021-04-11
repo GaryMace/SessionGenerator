@@ -18,8 +18,8 @@
 
     <modules>
         <module>SessionGeneratorBase</module>
-        <module>SessionGeneratorMain</module>
       <module>SessionGeneratorService</module>
+      <module>SessionGeneratorServiceShared</module>
     </modules>
 
     <properties>

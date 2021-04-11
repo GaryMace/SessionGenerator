@@ -1,9 +1,10 @@
-package utils.session;
+package com.garymace.session.generator.service.shared.utils;
+
+import java.util.function.Predicate;
 
 import com.garymace.session.generator.base.models.session.SessionSet;
 import com.garymace.session.generator.base.models.session.builder.SessionBuilderDecision;
 import com.garymace.session.generator.base.models.session.builder.SessionBuilderDecisionParams;
-import java.util.function.Predicate;
 
 public class SessionBuilderDecisionUtils {
   private static final Predicate<SessionBuilderDecisionParams> MAX_DISTANCE_REACHED = sessionBuilderParams ->
@@ -31,7 +32,7 @@ public class SessionBuilderDecisionUtils {
     );
 
     switch (action) {
-      case INCREASE_REPS:
+      case SessionBuilderDecision.INCREASE_REPS:
         if (
           MAX_REPS_REACHED.test(sessionBuilderParams) ||
           doesNewRepIncreaseCurrentDistanceTooMuch(sessionBuilderParams)

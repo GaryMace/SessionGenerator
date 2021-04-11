@@ -1,4 +1,4 @@
-package com.garymace.session.generator.main.service;
+package com.garymace.session.generator.service.shared.service;
 
 import com.garymace.session.generator.base.models.session.SessionSet;
 import com.garymace.session.generator.base.models.session.SetItem;

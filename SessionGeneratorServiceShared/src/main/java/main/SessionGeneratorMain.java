@@ -1,10 +1,10 @@
-package com.garymace.session.generator.main;
+package main;
 
 import com.garymace.session.generator.base.models.profile.Profile;
 import com.garymace.session.generator.base.models.session.SessionStageType;
 import com.garymace.session.generator.base.models.session.brief.sport.SwimTrainingSession;
-import com.garymace.session.generator.main.config.SessionGeneratorModule;
-import com.garymace.session.generator.main.service.TrainingSessionGenerator;
+import com.garymace.session.generator.service.shared.config.SessionGeneratorModule;
+import com.garymace.session.generator.service.shared.service.TrainingSessionGenerator;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import java.math.BigDecimal;

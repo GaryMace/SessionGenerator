@@ -1,4 +1,4 @@
-package utils;
+package com.garymace.session.generator.service.shared.utils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.garymace.session.generator.base.models.profile.Profile;

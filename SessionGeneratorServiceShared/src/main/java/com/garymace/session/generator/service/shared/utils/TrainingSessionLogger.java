@@ -1,13 +1,15 @@
-package utils;
+package com.garymace.session.generator.service.shared.utils;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.garymace.session.generator.base.models.session.SessionStageDetails;
 import com.garymace.session.generator.base.models.session.SetItem;
 import com.garymace.session.generator.base.models.session.brief.sport.SwimTrainingSession;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class TrainingSessionLogger {
   public static final Logger LOG = LoggerFactory.getLogger(TrainingSessionLogger.class);
