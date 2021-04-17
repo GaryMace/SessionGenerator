@@ -1,11 +1,12 @@
 package com.garymace.session.generator.service.shared.service.generator.rules;
 
+import java.util.Optional;
+
 import com.garymace.session.generator.base.models.SportType;
 import com.garymace.session.generator.base.models.profile.Profile;
 import com.garymace.session.generator.base.models.session.SessionStageType;
 import com.garymace.session.generator.base.models.session.rules.SessionRules;
 import com.google.inject.Inject;
-import java.util.Optional;
 
 public class SessionRulesService {
   private final SwimSessionRulesService swimSessionRulesService;

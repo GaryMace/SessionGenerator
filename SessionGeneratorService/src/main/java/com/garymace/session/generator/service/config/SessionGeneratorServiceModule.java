@@ -13,19 +13,18 @@ public class SessionGeneratorServiceModule
     if (getConfiguration().bindResources()) {
       binder.bind(SessionGeneratorResource.class);
     }
-    /*
-    // You can also bind request/response filters
+/*    // You can also bind request/response filters
     if (getConfiguration().bindFilters()) {
       binder.bind(ExampleRequestFilter.class);
       binder.bind(ExampleResponseFilter.class);
-    }
+    }*/
 
     // Any Managed, Task, HealthCheck, or ServerLifecycleListener bound in Guice will be added to Dropwizard for you
-    if (getConfiguration().bindExtras()) {
-      binder.bind(ExampleManaged.class);
-      binder.bind(ExampleTask.class);
-      binder.bind(ExampleHealthCheck.class);
-      binder.bind(ExampleServerLifecycleListener.class);
+/*    if (getConfiguration().bindExtras()) {
+      binder.bind(SessionGeneratorManager.class);
+      binder.bind(TrainingSessionGenerator.class);
+      binder.bind(SwimSessionRulesService.class);
+      binder.bind(SessionRulesService.class);
     }*/
   }
 }

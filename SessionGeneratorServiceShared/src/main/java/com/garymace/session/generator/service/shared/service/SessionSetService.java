@@ -1,14 +1,5 @@
 package com.garymace.session.generator.service.shared.service;
 
-import com.garymace.session.generator.base.models.session.SessionSet;
-import com.garymace.session.generator.base.models.session.SetItem;
-import com.garymace.session.generator.base.models.session.SetType;
-import com.garymace.session.generator.base.models.session.rules.SessionRules;
-import com.garymace.session.generator.base.models.session.rules.config.DistanceDetail;
-import com.garymace.session.generator.base.models.session.rules.config.PostSetRestDuration;
-import com.garymace.session.generator.base.models.session.rules.config.RepDetail;
-import com.google.common.collect.ImmutableList;
-import com.google.inject.Inject;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
@@ -16,11 +7,23 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.garymace.session.generator.base.models.session.SessionSet;
+import com.garymace.session.generator.base.models.session.SetItem;
+import com.garymace.session.generator.base.models.session.SetType;
+import com.garymace.session.generator.base.models.session.rules.SessionRules;
+import com.garymace.session.generator.base.models.session.rules.config.DistanceDetail;
+import com.garymace.session.generator.base.models.session.rules.config.PostSetRestDuration;
+import com.garymace.session.generator.base.models.session.rules.config.RepDetail;
+import com.garymace.session.generator.service.shared.utils.SetRepUtils;
+import com.google.common.collect.ImmutableList;
+import com.google.inject.Inject;
+
 import utils.CollectionUtils;
 import utils.RandomUtils;
-import utils.SetRepUtils;
 
 public class SessionSetService {
   private static final Logger LOG = LoggerFactory.getLogger(SessionSetService.class);

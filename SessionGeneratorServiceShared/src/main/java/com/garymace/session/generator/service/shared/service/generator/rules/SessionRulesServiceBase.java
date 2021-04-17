@@ -1,5 +1,9 @@
 package com.garymace.session.generator.service.shared.service.generator.rules;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Optional;
+
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.garymace.session.generator.base.models.profile.Profile;
@@ -8,9 +12,6 @@ import com.garymace.session.generator.base.models.session.rules.SessionRules;
 import com.garymace.session.generator.base.models.session.rules.config.Rule;
 import com.garymace.session.generator.base.models.session.rules.config.Rules;
 import com.google.inject.Inject;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Optional;
 
 public class SessionRulesServiceBase {
   private final ObjectMapper objectMapper;

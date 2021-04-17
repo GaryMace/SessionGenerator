@@ -1,14 +1,16 @@
 package com.garymace.session.generator.service.shared.service.generator.rules;
 
+import java.util.Optional;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.garymace.session.generator.base.models.profile.Profile;
 import com.garymace.session.generator.base.models.session.SessionStageType;
 import com.garymace.session.generator.base.models.session.rules.SessionRules;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
-import java.util.Optional;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 @Singleton
 public class SwimSessionRulesService extends SessionRulesServiceBase {

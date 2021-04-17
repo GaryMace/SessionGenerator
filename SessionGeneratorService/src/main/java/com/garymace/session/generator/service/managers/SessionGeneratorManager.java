@@ -17,6 +17,6 @@ public class SessionGeneratorManager {
   }
 
   public Set<SwimTrainingSession> generateSession(Profile userProfile) {
-
+    return trainingSessionGenerator.generateFrom(userProfile);
   }
 }

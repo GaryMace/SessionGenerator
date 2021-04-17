@@ -32,7 +32,7 @@ public class SessionBuilderDecisionUtils {
     );
 
     switch (action) {
-      case SessionBuilderDecision.INCREASE_REPS:
+      case INCREASE_REPS:
         if (
           MAX_REPS_REACHED.test(sessionBuilderParams) ||
           doesNewRepIncreaseCurrentDistanceTooMuch(sessionBuilderParams)
