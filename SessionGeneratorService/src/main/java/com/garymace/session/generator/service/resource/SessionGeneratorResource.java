@@ -28,7 +28,7 @@ public class SessionGeneratorResource {
   }
 
   @POST
-  public Set<SwimTrainingSession> generate(@Valid Profile userProfile) {
+  public Set<SwimTrainingSession> generate(Profile userProfile) {
     ApiPreconditions.checkNotNull(userProfile, "UserProfile may not be null");
     return sessionGeneratorManager.generateSession(userProfile);
   }
