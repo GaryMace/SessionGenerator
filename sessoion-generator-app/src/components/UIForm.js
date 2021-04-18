@@ -1,19 +1,11 @@
 import React from "react";
 import { Form, Field } from "react-final-form";
-import { TextField, Checkbox, Radio, Select } from "final-form-material-ui";
+import { TextField, Select } from "final-form-material-ui";
 import {
-  Typography,
   Paper,
-  Link,
   Grid,
-  Button,
-  CssBaseline,
-  RadioGroup,
-  FormLabel,
   MenuItem,
-  FormGroup,
-  FormControl,
-  FormControlLabel,
+  Button,
 } from "@material-ui/core";
 
 const axios = require('axios');
@@ -24,10 +16,8 @@ const apiCaller = axios.create({
 });
 
 const onSubmit = async (values) => {
-  console.log(values);
   apiCaller.post('sessiongenerator/v1/generate', JSON.stringify(values))
   .then(function (response) {
-    console.log(response);
     return response.json();
   })
   .catch(function (error) {
@@ -65,10 +55,16 @@ export default class UIForm extends React.Component {
                       fullWidth
                       required
                       name="athletic_level"
-                      component={TextField}
-                      type="enum"
+                      component={Select}
                       label="Athletic level"
-                    />
+                      formControlProps={{ fullWidth: true }}
+                    >
+                      <MenuItem value="beginner">Beginner</MenuItem>
+                    <MenuItem value="intermediate">Intermediate</MenuItem>
+                    <MenuItem value="advanced">
+                     Advanced
+                    </MenuItem>
+                    </Field>
                   </Grid>
                   <Grid item xs={6}>
                     <Field
@@ -85,9 +81,13 @@ export default class UIForm extends React.Component {
                       name="sport_type"
                       fullWidth
                       required
-                      component={TextField}
+                      component={Select}
                       label="Sport type"
-                    />
+                      formControlProps={{ fullWidth: true }}
+                    >
+                        <MenuItem value="swim">Swimming</MenuItem>
+                    <MenuItem value="running">Running</MenuItem>
+                    </Field>
                   </Grid>
                   <Grid item style={{ marginTop: 16 }}>
                     <Button
