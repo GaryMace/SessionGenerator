@@ -8,10 +8,7 @@
       "permitted_distance_details": [
         {
           "distance": 50,
-          "permitted_set_types": [
-            "AEROBIC",
-            "RECOVERY"
-          ],
+          "permitted_set_types": ["AEROBIC", "RECOVERY"],
           "post_set_rest_durations": [
             {
               "set_type": "AEROBIC",
@@ -37,10 +34,7 @@
         },
         {
           "distance": 100,
-          "permitted_set_types": [
-            "AEROBIC",
-            "RECOVERY"
-          ],
+          "permitted_set_types": ["AEROBIC", "RECOVERY"],
           "post_set_rest_durations": [
             {
               "set_type": "AEROBIC",
@@ -74,10 +68,7 @@
       "permitted_distance_details": [
         {
           "distance": 50,
-          "permitted_set_types": [
-            "AEROBIC",
-            "RECOVERY"
-          ],
+          "permitted_set_types": ["AEROBIC", "RECOVERY"],
           "post_set_rest_durations": [
             {
               "set_type": "AEROBIC",
@@ -103,10 +94,7 @@
         },
         {
           "distance": 100,
-          "permitted_set_types": [
-            "AEROBIC",
-            "RECOVERY"
-          ],
+          "permitted_set_types": ["AEROBIC", "RECOVERY"],
           "post_set_rest_durations": [
             {
               "set_type": "AEROBIC",
@@ -132,10 +120,7 @@
         },
         {
           "distance": 150,
-          "permitted_set_types": [
-            "AEROBIC",
-            "RECOVERY"
-          ],
+          "permitted_set_types": ["AEROBIC", "RECOVERY"],
           "post_set_rest_durations": [
             {
               "set_type": "AEROBIC",
@@ -161,10 +146,7 @@
         },
         {
           "distance": 200,
-          "permitted_set_types": [
-            "AEROBIC",
-            "RECOVERY"
-          ],
+          "permitted_set_types": ["AEROBIC", "RECOVERY"],
           "post_set_rest_durations": [
             {
               "set_type": "AEROBIC",
@@ -198,10 +180,7 @@
       "permitted_distance_details": [
         {
           "distance": 50,
-          "permitted_set_types": [
-            "AEROBIC",
-            "RECOVERY"
-          ],
+          "permitted_set_types": ["AEROBIC", "RECOVERY"],
           "post_set_rest_durations": [
             {
               "set_type": "AEROBIC",
@@ -227,10 +206,7 @@
         },
         {
           "distance": 100,
-          "permitted_set_types": [
-            "AEROBIC",
-            "RECOVERY"
-          ],
+          "permitted_set_types": ["AEROBIC", "RECOVERY"],
           "post_set_rest_durations": [
             {
               "set_type": "AEROBIC",
@@ -256,10 +232,7 @@
         },
         {
           "distance": 150,
-          "permitted_set_types": [
-            "AEROBIC",
-            "RECOVERY"
-          ],
+          "permitted_set_types": ["AEROBIC", "RECOVERY"],
           "post_set_rest_durations": [
             {
               "set_type": "AEROBIC",
@@ -285,10 +258,7 @@
         },
         {
           "distance": 200,
-          "permitted_set_types": [
-            "AEROBIC",
-            "RECOVERY"
-          ],
+          "permitted_set_types": ["AEROBIC", "RECOVERY"],
           "post_set_rest_durations": [
             {
               "set_type": "AEROBIC",
@@ -314,10 +284,7 @@
         },
         {
           "distance": 300,
-          "permitted_set_types": [
-            "AEROBIC",
-            "RECOVERY"
-          ],
+          "permitted_set_types": ["AEROBIC", "RECOVERY"],
           "post_set_rest_durations": [
             {
               "set_type": "AEROBIC",
