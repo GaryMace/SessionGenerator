@@ -8,7 +8,7 @@
 .idea/
 
 target/
-
+node_modules/
 .settings
 .classpath
 .checkstyle

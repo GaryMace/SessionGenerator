@@ -1125,10 +1125,7 @@
         },
         {
           "distance": 1000,
-          "permitted_set_types": [
-            "AEROBIC",
-            "THRESHOLD"
-          ],
+          "permitted_set_types": ["AEROBIC", "THRESHOLD"],
           "post_set_rest_durations": [
             {
               "set_type": "AEROBIC",
