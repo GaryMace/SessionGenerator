@@ -19,6 +19,7 @@ public class SessionGeneratorApplication
     GuiceBundle<SessionGeneratorServiceConfiguration> guiceBundle = GuiceBundle
       .defaultBuilder(SessionGeneratorServiceConfiguration.class)
       .modules(new SessionGeneratorServiceModule())
+        .enableGuiceEnforcer(false)
       .build();
 
     bootstrap.addBundle(guiceBundle);
